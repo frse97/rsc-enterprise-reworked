@@ -1,1 +1,1 @@
-export { default as RscMain } from "./rscMain";
+export { default as RscMain } from "./RscMain";

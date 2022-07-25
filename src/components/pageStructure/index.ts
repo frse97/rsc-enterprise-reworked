@@ -1,3 +1,3 @@
-export * from "./rscFooter";
-export * from "./rscHeader";
-export * from "./rscMain";
+export * from "./RscFooter";
+export * from "./RscHeader";
+export * from "./RscMain";

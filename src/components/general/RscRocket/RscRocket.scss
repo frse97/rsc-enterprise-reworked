@@ -1,0 +1,120 @@
+.rocket-container {
+  height: 600px;
+  width: 100vw;
+  position: relative;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+}
+
+.rocket {
+  width: 320px;
+  height: 400px;
+  position: absolute;
+  left: calc(50% - 160px);
+  top: calc(50% - 200px);
+
+  .rocket-body {
+    width: 90px;
+    margin: 0 auto;
+    margin-top: 60px;
+    position: relative;
+    animation: bounce 0.5s infinite;
+
+    .body {
+      position: absolute;
+      width: 90px;
+      z-index: 10;
+      background-color: #dadada;
+      height: 220px;
+      border-radius: 100% 100% 50% 50%;
+      border-top: 5px solid var(--primary-color1);
+
+      &:before {
+        content: "";
+        position: absolute;
+        width: 48px;
+        height: 12px;
+        left: calc(50% - 24px);
+        background-color: #554842;
+        bottom: -13px;
+        border-bottom-right-radius: 60%;
+        border-bottom-left-radius: 60%;
+      }
+    }
+
+    .fin {
+      position: absolute;
+      z-index: 0;
+      height: 55px;
+      width: 50px;
+      background-color: var(--primary-color1);
+    }
+    .fin-left {
+      left: -30px;
+      top: 170px;
+      border-top-left-radius: 80%;
+      border-bottom-left-radius: 20%;
+      border-left: 6px solid var(--primary-color3);
+    }
+    .fin-right {
+      right: -30px;
+      top: 170px;
+      border-top-right-radius: 80%;
+      border-bottom-right-radius: 20%;
+      border-right: 6px solid var(--primary-color3);
+    }
+    .window {
+      position: absolute;
+      z-index: 12;
+      width: 40px;
+      height: 40px;
+      border-radius: 100%;
+      background-color: #4c5bff;
+      left: calc(50% - 25px);
+      top: 40px;
+      border: 5px solid #b4b2b2;
+
+      .alien {
+        width: 22px;
+        height: 22px;
+        left: 6.5px;
+        top: 8px;
+        position: absolute;
+        border-radius: 20% 50% 50% 50%;
+        border: 2px solid black;
+        background-color: #00cd00;
+        transform: rotate(225deg);
+
+        .eye {
+          width: 6px;
+          height: 6px;
+          position: absolute;
+          border-radius: 20% 50% 50% 50%;
+          background-color: var(--dark-bg);
+
+          &-left {
+            left: 10px;
+            top: 4px;
+            transform: rotate(320deg);
+          }
+          &-right {
+            right: 12px;
+            top: 10px;
+            transform: rotate(45deg);
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translate3d(0px, 0px, 0);
+  }
+  50% {
+    transform: translate3d(0px, -4px, 0);
+  }
+  100% {
+    transform: translate3d(0px, 0px, 0);
+  }
+}

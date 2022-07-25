@@ -1,0 +1,19 @@
+.rsc-footer {
+  height: 220px;
+  width: 100vw;
+  background-color: var(--primary-color1);
+
+  .connections {
+    width: inherit;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+      color: var(--light-bg);
+      font-size: 32px;
+      margin-right: 12px;
+    }
+  }
+}

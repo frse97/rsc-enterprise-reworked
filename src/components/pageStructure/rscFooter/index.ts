@@ -1,1 +1,1 @@
-export { default as RscFooter } from "./rscFooter";
+export { default as RscFooter } from "./RscFooter";

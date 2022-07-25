@@ -1,1 +1,1 @@
-export { default as RscHeader } from "./rscHeader";
+export { default as RscHeader } from "./RscHeader";

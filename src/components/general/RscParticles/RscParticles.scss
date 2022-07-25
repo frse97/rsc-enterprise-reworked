@@ -1,0 +1,43 @@
+.particles-container {
+  width: 100vw;
+  position: relative;
+  height: 520px;
+  background: radial-gradient(ellipse, #1b415c 0%, #06003c 100%);
+
+  .services-call {
+    $width: 240px;
+    $height: 100px;
+
+    position: absolute;
+    top: calc(50% - (100px / 2));
+    left: calc(50% - (240px / 2));
+    height: $height;
+    width: $width;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    button {
+      margin-top: 12px;
+      border-radius: 4px;
+      background-color: var(--primary-color1);
+      border: 2px solid white;
+      color: white;
+
+      font-size: 24px;
+      padding: 16px;
+      outline: none;
+      transition: all 0.8s ease-in-out;
+
+      &:hover {
+        background-color: white;
+        border: 2px solid var(--primary-color1);
+        color: var(--primary-color1);
+        cursor: pointer;
+        font-weight: bold;
+      }
+    }
+  }
+}
