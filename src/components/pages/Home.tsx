@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { RscParticles, RscRocket } from "../general";
+import { RscSteps } from "../general/RscSteps";
 import "./Home.scss";
 
 const RscHome: React.FC = () => {
@@ -20,8 +20,7 @@ const RscHome: React.FC = () => {
           Scroll down to see <br /> how we do it
         </div>
       </div>
-      <RscRocket />
-      <RscParticles />
+      <RscSteps />
     </div>
   );
 };

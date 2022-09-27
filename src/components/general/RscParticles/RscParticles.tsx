@@ -30,14 +30,14 @@ const RscParticles: React.FC = () => {
         canvasClassName="canvas-particles"
         options={{
           fullScreen: false,
-          autoPlay: true,
+          autoPlay: false,
           fpsLimit: 120,
           particles: {
             number: {
               value: 200,
               density: {
                 enable: true,
-                value_area: 1200,
+                value_area: 1000,
               },
             },
             color: {
@@ -81,7 +81,7 @@ const RscParticles: React.FC = () => {
               width: 1,
             },
             move: {
-              enable: true,
+              enable: false,
               speed: 1,
               direction: "inside",
               random: true,

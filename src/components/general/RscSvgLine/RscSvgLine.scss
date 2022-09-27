@@ -1,0 +1,24 @@
+svg.line {
+  position: absolute;
+  fill: none;
+
+  path {
+    d: path("M0,25 C150,110 150, -60 300,25");
+    stroke-width: 1;
+    stroke: #e5e5e5;
+    stroke-linecap: round;
+    transform: translate(50px, 32%);
+    animation: svgLine 6s ease-in-out infinite;
+  }
+}
+
+@keyframes svgLine {
+  0% {
+    d: path("M0,25 C150,110 150, -60 300,25");
+    stroke: #e5e5e5;
+  }
+  50% {
+    d: path("M0,25 C160, -50 140, 110 330,25");
+    stroke: var(--primary-color1);
+  }
+}

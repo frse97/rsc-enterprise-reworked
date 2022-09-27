@@ -1,3 +1,3 @@
 export * from "./RscLogo";
 export * from "./RscParticles";
-export * from "./RscRocket";
+export * from "./RscRocketScene";

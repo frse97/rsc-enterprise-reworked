@@ -1,0 +1,31 @@
+.fourth-step {
+  display: flex;
+  align-items: center;
+  // background-color: rgba(0, 0, 0, 0.2);
+  padding: 16px 8px;
+  margin-bottom: 128px;
+
+  .development {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    padding: 24px;
+    max-width: 320px;
+    // background-color: rgba(0, 0, 0, 0.2);
+    background-color: #e5e5e5;
+    border-radius: 8px;
+    // box-shadow: 0px 0px 12px 2px #c1c1c1;
+
+    .title {
+      font-size: 24px;
+    }
+    .description {
+      font-size: 16px;
+    }
+  }
+  .development-img {
+    margin-right: auto;
+    min-width: 340px;
+    max-width: 340px;
+  }
+}

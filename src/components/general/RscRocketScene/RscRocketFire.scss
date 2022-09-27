@@ -1,0 +1,229 @@
+// Fire effect
+$red-flame: saturate(#ce1e04, 20%);
+$orange-flame: saturate(#fd980f, 20%);
+$yellow-flame: saturate(#fde37b, 20%);
+$white-flame: saturate(#fef1d9, 0);
+
+// measurements
+$scale: 1;
+$fire-duration: 2s;
+
+$flame-width: 48px * $scale;
+$flame-offset: 138px * $scale;
+
+$small-flame-width: 32px * $scale;
+$spark-width: 6px * $scale;
+$spark-height: 20px * $scale;
+$spark-border-radius: 18px * $scale;
+
+.fire1 {
+  transform: scale(0.15) rotate(180deg);
+  position: absolute;
+  top: 288px;
+  right: 80px;
+  animation: bounceFire1 1.2s infinite;
+}
+.fire2 {
+  transform: scale(-0.15, 0.15) rotate(180deg);
+  position: absolute;
+  top: 288px;
+  left: 82px;
+  animation: bounceFire2 1.2s infinite;
+}
+
+.fire {
+  .flame {
+    position: absolute;
+    transform-origin: bottom center;
+    opacity: 0.9;
+  }
+
+  &-red {
+    .flame {
+      width: $flame-width;
+      border-radius: $flame-width;
+      background: $red-flame;
+      box-shadow: 0 0 80px 18px rgba($red-flame, 0.4);
+
+      &:nth-child(1) {
+        left: $flame-offset;
+        height: 160px;
+        bottom: 100px;
+        animation: fire $fire-duration 0.15s ease-in-out infinite alternate;
+      }
+      &:nth-child(2) {
+        left: ($flame-offset + $flame-width);
+        height: 240px;
+        bottom: 100px;
+        animation: fire $fire-duration 0.35s ease-in-out infinite alternate;
+      }
+      &:nth-child(3) {
+        left: ($flame-offset + $flame-width * 2);
+        height: 300px;
+        bottom: 100px;
+        animation: fire $fire-duration 0.1s ease-in-out infinite alternate;
+      }
+      &:nth-child(4) {
+        left: ($flame-offset + $flame-width * 3);
+        height: 360px;
+        bottom: 100px;
+        animation: fire $fire-duration 0s ease-in-out infinite alternate;
+      }
+    }
+  }
+  &-orange {
+    .flame {
+      width: $flame-width;
+      border-radius: $flame-width;
+      background: $orange-flame;
+      box-shadow: 0 0 80px 18px rgba($orange-flame, 0.4);
+
+      &:nth-child(1) {
+        left: $flame-offset;
+        height: 140px;
+        bottom: 100px;
+        animation: fire $fire-duration 0.05s ease-in-out infinite alternate;
+      }
+      &:nth-child(2) {
+        left: ($flame-offset + $flame-width);
+        height: 210px;
+        bottom: 100px;
+        animation: fire $fire-duration 0.1s ease-in-out infinite alternate;
+      }
+      &:nth-child(3) {
+        left: ($flame-offset + $flame-width * 2);
+        height: 250px;
+        bottom: 100px;
+        animation: fire $fire-duration 0.35s ease-in-out infinite alternate;
+      }
+      &:nth-child(4) {
+        left: ($flame-offset + $flame-width * 3);
+        height: 300px;
+        bottom: 100px;
+        animation: fire $fire-duration 0.4s ease-in-out infinite alternate;
+      }
+      &:nth-child(5) {
+        left: ($flame-offset + $flame-width * 4);
+        height: 260px;
+        bottom: 100px;
+        animation: fire $fire-duration 0.5s ease-in-out infinite alternate;
+      }
+      &:nth-child(6) {
+        left: ($flame-offset + $flame-width * 5);
+        height: 202px;
+        bottom: 100px;
+        animation: fire $fire-duration 0.35s ease-in-out infinite alternate;
+      }
+      &:nth-child(7) {
+        left: ($flame-offset + $flame-width * 6);
+        height: 110px;
+        bottom: 100px;
+        animation: fire $fire-duration 0.1s ease-in-out infinite alternate;
+      }
+    }
+  }
+  &-yellow {
+    .flame {
+      width: $flame-width;
+      border-radius: $flame-width;
+      background: $yellow-flame;
+      box-shadow: 0 0 80px 18px rgba($yellow-flame, 0.4);
+
+      &:nth-child(1) {
+        left: ($flame-offset + $flame-width);
+        height: 140px;
+        bottom: 100px;
+        animation: fire $fire-duration 0.6s ease-in-out infinite alternate;
+      }
+      &:nth-child(2) {
+        left: ($flame-offset + $flame-width * 2);
+        height: 172px;
+        bottom: 120px;
+        animation: fire $fire-duration 0.4s ease-in-out infinite alternate;
+      }
+    }
+  }
+  &-white {
+    .flame {
+      width: $flame-width;
+      border-radius: $flame-width;
+      background: $white-flame;
+      box-shadow: 0 0 80px 18px rgba($white-flame, 0.4);
+
+      &:nth-child(1) {
+        left: $flame-offset + (18px * $scale);
+        width: $small-flame-width;
+        height: 100px;
+        bottom: 100px;
+        animation: fire $fire-duration 0.22s ease-in-out infinite alternate;
+      }
+      &:nth-child(2) {
+        left: ($flame-offset + $flame-width - (5px * $scale));
+        width: $small-flame-width;
+        height: 120px;
+        bottom: 100px;
+        animation: fire $fire-duration 0.42s ease-in-out infinite alternate;
+      }
+      &:nth-child(3) {
+        left: ($flame-offset + $flame-width * 2);
+        height: 170px;
+        bottom: 100px;
+        animation: fire $fire-duration 0.32s ease-in-out infinite alternate;
+      }
+      &:nth-child(4) {
+        left: ($flame-offset + $flame-width * 3);
+        height: 210px;
+        bottom: 100px;
+        animation: fire $fire-duration 0.8s ease-in-out infinite alternate;
+      }
+    }
+  }
+}
+
+@keyframes fire {
+  0% {
+    transform: scaleY(1);
+  }
+  28% {
+    transform: scaleY(0.7);
+  }
+  38% {
+    transform: scaleY(0.8);
+  }
+  50% {
+    transform: scaleY(0.6);
+  }
+  70% {
+    transform: scaleY(0.95);
+  }
+  82% {
+    transform: scaleY(0.58);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes bounceFire1 {
+  0% {
+    transform: scale(0.15) rotate(180deg) translate3d(0px, 0px, 0);
+  }
+  50% {
+    transform: scale(0.15) rotate(180deg) translate3d(0px, -12px, 0);
+  }
+  100% {
+    transform: scale(0.15) rotate(180deg) translate3d(0px, 0px, 0);
+  }
+}
+
+@keyframes bounceFire2 {
+  0% {
+    transform: scale(-0.15, 0.15) rotate(180deg) translate3d(0px, 0px, 0);
+  }
+  50% {
+    transform: scale(-0.15, 0.15) rotate(180deg) translate3d(0px, -12px, 0);
+  }
+  100% {
+    transform: scale(-0.15, 0.15) rotate(180deg) translate3d(0px, 0px, 0);
+  }
+}
