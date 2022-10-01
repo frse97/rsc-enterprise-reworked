@@ -1,6 +1,7 @@
 import { memo } from "react";
 import cs from "classnames";
 import "./RscSteps.scss";
+import { RscFlowingLine } from "../line";
 
 export interface IRscStep {
   /**
@@ -20,6 +21,19 @@ export interface IRscStep {
    * @default 'left'
    */
   orientation?: "left" | "right";
+  /**
+   * Horizontal line orientation
+   */
+  horLineDirection?: "left" | "right";
+  /**
+   * Vertical line orientation
+   */
+  verLineDirection?: "verticalLeft" | "verticalRight";
+  /**
+   * Flag to identify if the vertical line should be displayed
+   * @default true
+   */
+  isVerticalLineDisplayed?: boolean;
 }
 
 interface IRscSteps {
@@ -30,7 +44,15 @@ interface IRscSteps {
 }
 
 export const RscStep: React.FC<IRscStep> = (props) => {
-  const { title, description, image, orientation } = props;
+  const {
+    title,
+    description,
+    image,
+    orientation,
+    horLineDirection,
+    verLineDirection,
+    isVerticalLineDisplayed = true,
+  } = props;
 
   const className = cs(
     "step",
@@ -45,6 +67,10 @@ export const RscStep: React.FC<IRscStep> = (props) => {
       </div>
 
       <div className="step-img">{image}</div>
+      <RscFlowingLine direction={horLineDirection} />
+      {isVerticalLineDisplayed && (
+        <RscFlowingLine direction={horLineDirection} mode={verLineDirection} />
+      )}
     </div>
   );
 };
