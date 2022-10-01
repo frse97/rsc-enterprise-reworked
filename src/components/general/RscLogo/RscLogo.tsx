@@ -1,6 +1,7 @@
 import { memo, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { rscRoutes } from "../../shared";
+import "./RscLogo.scss";
 
 const RscLogo: React.FC = () => {
   const logoAlt = useMemo(() => {
@@ -8,7 +9,7 @@ const RscLogo: React.FC = () => {
   }, []);
 
   const logoSrc = useMemo(() => {
-    return process.env.PUBLIC_URL + "./assets/logo.png";
+    return process.env.PUBLIC_URL + "./assets/LOGORSC2.png";
   }, []);
 
   return (
