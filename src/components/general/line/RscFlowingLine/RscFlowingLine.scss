@@ -4,6 +4,10 @@
   border-radius: 8px;
   overflow: hidden;
 
+  .rsc-line {
+    border-radius: 8px;
+  }
+
   &.flowing-left {
     .rsc-line {
       animation: 2s floatingLeft linear infinite;
@@ -24,10 +28,13 @@
     right: 342px;
 
     .rsc-line {
-      width: 24px;
+      min-width: 24px;
       height: 8px;
+      &:first-child {
+        margin-left: 8px;
+      }
       &:not(:last-child) {
-        margin-right: 16px;
+        margin-right: 8px;
       }
     }
   }
@@ -41,8 +48,8 @@
 
     .rsc-line {
       width: 8px;
-      height: 24px;
-      animation: 2s floatingBottom linear infinite;
+      min-height: 24px;
+      animation: 1s floatingBottom linear infinite;
 
       &:not(:last-child) {
         margin-bottom: 4px;
@@ -57,32 +64,25 @@
   }
 
   .rsc-line {
-    background-color: rgba(0, 21, 255, 0.6);
-
-    &:first-child {
-      border-radius: 4px 4px 0 0;
-    }
-    &:last-child {
-      border-radius: 0 0 4px 4px;
-    }
+    background-color: rgba(0, 21, 255, 0.4);
   }
 }
 
 @keyframes floatingLeft {
   0% {
-    transform: translateX(0px);
+    transform: translateX(-500px);
   }
   100% {
-    transform: translateX(520px);
+    transform: translateX(500px);
   }
 }
 
 @keyframes floatingRight {
   0% {
-    transform: translateX(520px);
+    transform: translateX(500px);
   }
   100% {
-    transform: translateX(-120px);
+    transform: translateX(-500px);
   }
 }
 

@@ -1,0 +1,17 @@
+.rsc-container {
+  &.is-flex {
+    display: flex;
+  }
+  &.flex-h {
+    flex-direction: row;
+  }
+  &.flex-v {
+    flex-direction: column;
+  }
+  &.is-aligned-center {
+    align-items: center;
+  }
+  &.is-justified-center {
+    justify-content: center;
+  }
+}

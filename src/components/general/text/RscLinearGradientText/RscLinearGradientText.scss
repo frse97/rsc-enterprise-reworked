@@ -1,0 +1,10 @@
+.rsc-linear-gradient {
+  background: -webkit-linear-gradient(
+    var(--angleGradient),
+    var(--colorGradient1),
+    var(--colorGradient2) var(--opacityGradient)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

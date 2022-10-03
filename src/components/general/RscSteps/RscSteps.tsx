@@ -34,6 +34,11 @@ export interface IRscStep {
    * @default true
    */
   isVerticalLineDisplayed?: boolean;
+  /**
+   * Flag to identify if the horizontal line should be displayed
+   * @default true
+   */
+  isHorizontalLineDisplayed?: boolean;
 }
 
 interface IRscSteps {
@@ -52,6 +57,7 @@ export const RscStep: React.FC<IRscStep> = (props) => {
     horLineDirection,
     verLineDirection,
     isVerticalLineDisplayed = true,
+    isHorizontalLineDisplayed = true,
   } = props;
 
   const className = cs(
@@ -62,12 +68,16 @@ export const RscStep: React.FC<IRscStep> = (props) => {
   return (
     <div className={className}>
       <div className="container">
-        <h1 className="title">{title}</h1>
+        <h1 className="title" aria-details={title}>
+          {title}
+        </h1>
         <p className="description">{description}</p>
       </div>
 
       <div className="step-img">{image}</div>
-      <RscFlowingLine direction={horLineDirection} />
+      {isHorizontalLineDisplayed && (
+        <RscFlowingLine direction={horLineDirection} />
+      )}
       {isVerticalLineDisplayed && (
         <RscFlowingLine direction={horLineDirection} mode={verLineDirection} />
       )}

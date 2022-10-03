@@ -34,15 +34,35 @@ const RscFlowingLine: React.FC<IRscFlowingLine> = (props) => {
 
   return (
     <div className={classNames}>
-      <div className="rsc-line" />
-      <div className="rsc-line" />
-      <div className="rsc-line" />
-      <div className="rsc-line" />
-      <div className="rsc-line" />
-      <div className="rsc-line" />
-      <div className="rsc-line" />
-      <div className="rsc-line" />
-      <div className="rsc-line" />
+      {mode === "horizontal" && (
+        <>
+          <div className="rsc-line" />
+          <div className="rsc-line" />
+          <div className="rsc-line" />
+          <div className="rsc-line" />
+          <div className="rsc-line" />
+          <div className="rsc-line" />
+          <div className="rsc-line" />
+          <div className="rsc-line" />
+          <div className="rsc-line" />
+          <div className="rsc-line" />
+          <div className="rsc-line" />
+          <div className="rsc-line" />
+          <div className="rsc-line" />
+          <div className="rsc-line" />
+          <div className="rsc-line" />
+          <div className="rsc-line" />
+        </>
+      )}
+      {(mode === "verticalLeft" || mode === "verticalRight") && (
+        <>
+          <div className="rsc-line" />
+          <div className="rsc-line" />
+          <div className="rsc-line" />
+          <div className="rsc-line" />
+          <div className="rsc-line" />
+        </>
+      )}
     </div>
   );
 };
