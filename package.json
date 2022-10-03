@@ -1,7 +1,14 @@
 {
   "name": "rsc-enterprise1",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "license": "Unlicensed",
+  "author": {
+    "name": "Sebastian Fries",
+    "email": "sebastianfries@outlook.com",
+    "url": "https://github.com/frse97"
+  },
+  "homepage": "https://frse97.github.io/rsc-enterprise-reworked",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/free-brands-svg-icons": "^6.1.1",
@@ -15,6 +22,7 @@
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
     "classnames": "^2.3.2",
+    "gh-pages": "^4.0.0",
     "node-sass": "^7.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -29,7 +37,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploygithub": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [

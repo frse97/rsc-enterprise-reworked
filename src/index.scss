@@ -18,10 +18,13 @@ code {
 // TODO: Remember to subtracte the footer height
 html,
 body,
-#root,
-.rsc-app {
-  height: 100%;
+#root {
   overflow-x: hidden;
+}
+
+.rsc-app {
+  overflow: hidden;
+  position: relative;
 }
 
 * {
