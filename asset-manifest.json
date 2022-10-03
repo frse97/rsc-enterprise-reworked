@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/rsc-enterprise-reworked/static/css/main.18c0ed58.css",
+    "main.js": "/rsc-enterprise-reworked/static/js/main.2dfc15f7.js",
+    "static/js/787.ac421169.chunk.js": "/rsc-enterprise-reworked/static/js/787.ac421169.chunk.js",
+    "index.html": "/rsc-enterprise-reworked/index.html",
+    "main.18c0ed58.css.map": "/rsc-enterprise-reworked/static/css/main.18c0ed58.css.map",
+    "main.2dfc15f7.js.map": "/rsc-enterprise-reworked/static/js/main.2dfc15f7.js.map",
+    "787.ac421169.chunk.js.map": "/rsc-enterprise-reworked/static/js/787.ac421169.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.18c0ed58.css",
+    "static/js/main.2dfc15f7.js"
+  ]
+}
