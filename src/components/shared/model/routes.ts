@@ -21,22 +21,22 @@ interface IRscRoutes {
 export const rscRoutes: IRscRoutes = {
   // The home route.
   home: {
-    url: "/",
+    url: "/rsc-enterprise-reworked",
     name: "home",
   },
   // The route for the services page
   services: {
-    url: "/services",
+    url: "/rsc-enterprise-reworked/services",
     name: "services",
   },
   // The route for the about us page
   aboutUs: {
-    url: "/about-us",
+    url: "/rsc-enterprise-reworked/about-us",
     name: "about-us",
   },
   // The route for the contact page
   contactUs: {
-    url: "/contact-us",
+    url: "/rsc-enterprise-reworked/contact-us",
     name: "contact-us",
   },
 };

@@ -65,7 +65,7 @@ const HomeMainBackground: React.FC<IHomeMainBackground> = (props) => {
           size="lg"
           color="mainBlue"
           isFilled={false}
-          href={rscRoutes.services.name}
+          href={rscRoutes.services.url}
         />
       </div>
     </div>

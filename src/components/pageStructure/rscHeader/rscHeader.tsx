@@ -11,13 +11,13 @@ const RscHeader: React.FC = () => {
         <RscLogo />
       </div>
       <div className="navigation">
-        <Link to={rscRoutes.aboutUs.name}>
+        <Link to={rscRoutes.aboutUs.url}>
           <button>WHO WE ARE</button>
         </Link>
-        <Link to={rscRoutes.aboutUs.name}>
+        <Link to={rscRoutes.services.url}>
           <button>OUR SERVICES</button>
         </Link>
-        <Link to={rscRoutes.aboutUs.name}>
+        <Link to={rscRoutes.contactUs.url}>
           <button>CONTACT</button>
         </Link>
       </div>
