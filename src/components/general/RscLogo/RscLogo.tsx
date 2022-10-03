@@ -9,7 +9,7 @@ const RscLogo: React.FC = () => {
   }, []);
 
   const logoSrc = useMemo(() => {
-    return process.env.PUBLIC_URL + "./assets/LOGORSC2.png";
+    return process.env.PUBLIC_URL + "/assets/LOGORSC2.png";
   }, []);
 
   return (
