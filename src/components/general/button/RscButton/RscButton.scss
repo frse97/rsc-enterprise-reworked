@@ -1,8 +1,14 @@
+.rsc-button-anchor {
+  text-decoration: none;
+}
+
 .rsc-button {
   border: none;
   background: transparent;
   border-radius: 32px;
   transition: all 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
 
   &.is-filled {
     background-color: var(--rsc-primary-btn-color);
@@ -58,5 +64,10 @@
   &.is-extralarge {
     font-size: 32px;
     padding: 24px 32px;
+  }
+
+  // Icon
+  .rsc-btn-icon {
+    margin-right: 8px;
   }
 }

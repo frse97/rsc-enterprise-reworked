@@ -8,3 +8,6 @@ export * from "./text";
 export * from "./RscLogo";
 export * from "./RscParticles";
 export * from "./RscRocketScene";
+
+// Sections
+export * from "./RscFileDownloadSection";

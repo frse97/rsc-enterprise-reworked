@@ -1,31 +1,104 @@
 .rsc-footer {
+  position: relative;
   margin-bottom: -146px;
   margin-left: -24px;
-  height: 440px;
+  height: 640px;
   width: 100vw;
   border-radius: 0% 0% 0% 70px;
-  box-shadow: 0px -2px 20px 8px #666666;
+  // box-shadow: 0px -2px 20px 8px #666666;
   transform: rotate(175deg);
-  background: linear-gradient(
-    25deg,
-    var(--primary-color3),
-    var(--primary-color1),
-    var(--primary-color4)
-  );
+  // background: linear-gradient(
+  //   25deg,
+  //   var(--primary-color3),
+  //   var(--primary-color1),
+  //   var(--primary-color4)
+  // );
+  background-color: #e5e5e5;
   background-size: 400% 400%;
   animation: gradient 6s ease-in-out infinite;
+
+  .container {
+    position: absolute;
+    top: 200px;
+    left: 120px;
+    width: 90%;
+    height: 320px;
+    // background-color: yellow;
+    transform: rotate(-175deg);
+    padding: 24px 32px;
+    box-sizing: border-box;
+
+    .content {
+      display: flex;
+      border-bottom: 1px solid #b4b2b2;
+      padding-bottom: 12px;
+      margin-bottom: 24px;
+    }
+
+    .menu-container {
+      box-sizing: border-box;
+      min-width: 220px;
+      margin-left: 220px;
+      padding: 12px 8px;
+
+      .title {
+        h2 {
+          //TODO: Refactor
+          margin: 0;
+        }
+      }
+      .entries {
+        .entry {
+          a {
+            text-decoration: none;
+            color: var(--bg-color);
+          }
+
+          &:first-child {
+            margin-top: 32px;
+          }
+          &:not(:last-child) {
+            margin-bottom: 32px;
+          }
+        }
+      }
+    }
+    .social-container {
+      box-sizing: border-box;
+      min-width: 220px;
+      margin-left: 220px;
+      padding: 12px 8px;
+
+      .title {
+        h2 {
+          //TODO: Refactor
+          margin: 0;
+        }
+      }
+      .socials {
+        .row {
+          margin-top: 8px;
+          a {
+            font-size: 32px;
+            padding: 4px;
+            color: #b4b2b2;
+
+            &:not(:last-child) {
+              margin-right: 24px;
+            }
+          }
+        }
+      }
+    }
+
+    .bottom-container {
+      color: #b4b2b2;
+
+      .creator {
+        a {
+          color: #b4b2b2;
+        }
+      }
+    }
+  }
 }
-
-// .connections {
-//   width: inherit;
-//   height: inherit;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-
-//   svg {
-//     color: var(--light-bg);
-//     font-size: 32px;
-//     margin-right: 12px;
-//   }
-// }

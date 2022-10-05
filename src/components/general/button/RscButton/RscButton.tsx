@@ -1,4 +1,4 @@
-import { CSSProperties, memo, ReactNode } from "react";
+import { CSSProperties, memo, ReactNode, useMemo } from "react";
 import cs from "classnames";
 import "./RscButton.scss";
 import { Link } from "react-router-dom";
@@ -40,6 +40,10 @@ interface IRscButton {
    */
   label?: ReactNode;
   /**
+   * The icon of the button
+   */
+  icon?: ReactNode;
+  /**
    * The native type of the button
    * @default 'button'
    */
@@ -77,6 +81,7 @@ const RscButton: React.FC<IRscButton> = (props) => {
   const {
     className,
     label,
+    icon,
     color = "mainBlue",
     nativeType = "button",
     isFilled = true,
@@ -103,14 +108,25 @@ const RscButton: React.FC<IRscButton> = (props) => {
     "--rsc-primary-btn-color": `${transformColorToHex(color)}`,
   };
 
+  console.log("ICON", icon);
+
+  const buttonContent: JSX.Element = useMemo(() => {
+    return (
+      <>
+        {icon && <div className="rsc-btn-icon">{icon}</div>}
+        {label}
+      </>
+    );
+  }, [icon, label]);
+
   return onClick ? (
     <button className={classNames} type={nativeType} style={mergedStyles}>
-      {label}
+      {buttonContent}
     </button>
   ) : (
-    <Link to={href || ""}>
+    <Link className="rsc-button-anchor" to={href || ""}>
       <button className={classNames} type={nativeType} style={mergedStyles}>
-        {label}
+        {buttonContent}
       </button>
     </Link>
   );

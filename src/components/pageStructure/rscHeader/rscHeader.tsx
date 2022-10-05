@@ -15,7 +15,7 @@ const RscHeader: React.FC = () => {
           <button>WHO WE ARE</button>
         </Link>
         <Link to={rscRoutes.services.url}>
-          <button>OUR SERVICES</button>
+          <button>SERVICES</button>
         </Link>
         <Link to={rscRoutes.contactUs.url}>
           <button>CONTACT</button>

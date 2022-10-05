@@ -1,11 +1,15 @@
 import { memo } from "react";
-import { RscParticles } from "../../general";
+import { RscFileDownloadSection, RscParticles } from "../../general";
 import "./Home.scss";
 import { RscSteps, rscStepsStructure } from "../../general/RscSteps";
 import { homeParticlesOptions } from "./Home.data";
 import { RscButton } from "../../general/button";
 import { rscRoutes } from "../../shared";
 import { RscText } from "../../general/text";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBolt } from "@fortawesome/free-solid-svg-icons";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
+
 interface IHomeMainBackground {
   /**
    * Identifier if the home background should have particles
@@ -39,6 +43,7 @@ const HomeMainBackground: React.FC<IHomeMainBackground> = (props) => {
           color="mainBlue"
           isFilled={false}
           href={rscRoutes.services.url}
+          icon={<FontAwesomeIcon icon={faBolt as IconProp} />}
         />
       </div>
     </div>
@@ -50,6 +55,7 @@ const RscHome: React.FC = () => {
     <div className="rsc-home">
       <HomeMainBackground />
       <RscSteps steps={rscStepsStructure} />
+      <RscFileDownloadSection />
     </div>
   );
 };
