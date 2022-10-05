@@ -1,4 +1,32 @@
 .rsc-navigation {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  margin-right: 128px;
+
   .rsc-nav-item {
+    &.is-active {
+      a {
+        padding: 8px 12px;
+        border-radius: 8px;
+        // background: rgba(0, 0, 0, 0.3);
+        background-color: var(--primary-color1);
+      }
+    }
+
+    &:not(:last-child) {
+      margin-right: 48px;
+    }
+
+    a {
+      padding: 8px 12px;
+      border-radius: 8px;
+      color: var(--light-bg);
+      text-decoration: none;
+
+      &:hover {
+        background: var(--primary-color4);
+      }
+    }
   }
 }
