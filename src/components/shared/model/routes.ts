@@ -6,6 +6,8 @@ interface IRscRoute {
   url: string;
   // The translation key for the route
   name: string;
+  // Possible children to the route
+  items?: IRscRoute[];
 }
 
 /**
@@ -28,6 +30,16 @@ export const rscRoutes: IRscRoutes = {
   services: {
     url: "/rsc-enterprise-reworked/services",
     name: "services",
+    items: [
+      {
+        url: "/rsc-enterprise-reworked/services/web3-adoption",
+        name: "web3 adaption",
+      },
+      {
+        url: "/rsc-enterprise-reworked/services/enterprise-blockchain",
+        name: "enterprise blockchain",
+      },
+    ],
   },
   // The route for the about us page
   aboutUs: {

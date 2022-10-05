@@ -21,8 +21,8 @@ const RscFileDownloadSection: React.FC<IRscFileDownloadSection> = (props) => {
           </div>
         </div>
         <div className="download">
-          {fileList.map((file) => {
-            return <RscPdf name={file.name} />;
+          {fileList.map((file, i) => {
+            return <RscPdf key={i} name={file.name} />;
           })}
         </div>
       </div>

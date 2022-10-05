@@ -1,1 +1,1 @@
-export { default as RscContainer } from "./RscContainer";
+export * from "./RscContainer";

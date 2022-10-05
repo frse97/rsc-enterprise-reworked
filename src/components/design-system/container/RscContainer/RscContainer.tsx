@@ -16,16 +16,13 @@ const RscContainer: React.FC<IRscContainer> = (props) => {
     style,
   } = props;
 
-  const classNames = cs(
-    "rsc-container",
-    className,
-    direction === "horizontal" ? "flex-h" : "flex-v",
-    {
-      "is-flex": flex,
-      "is-aligned-center": alignCenter,
-      "is-justified-center": justifyContentCenter,
-    }
-  );
+  const classNames = cs("rsc-container", className, {
+    "is-flex": flex,
+    "flex-h": direction === "horizontal",
+    "flex-v": direction === "vertical",
+    "is-aligned-center": alignCenter,
+    "is-justified-center": justifyContentCenter,
+  });
 
   return <>{generateContainer(children, type, classNames, style)}</>;
 };

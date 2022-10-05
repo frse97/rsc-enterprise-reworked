@@ -10,7 +10,7 @@ const RscMain: React.FC = () => {
       <Routes>
         <Route path={rscRoutes.home.url} element={<Home />} />
         <Route path={rscRoutes.aboutUs.url} element={<>WHO WE ARE</>} />
-        <Route path={rscRoutes.services.url} element={<>OUR SERVICES</>} />
+        <Route path={rscRoutes.services.url} element={<>SERVICES</>} />
         <Route path={rscRoutes.contactUs.url} element={<>CONTACT US</>} />
       </Routes>
     </main>

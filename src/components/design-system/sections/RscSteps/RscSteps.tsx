@@ -46,8 +46,8 @@ const RscSteps: React.FC<IRscSteps> = (props) => {
 
   return (
     <div className="rsc-steps-container">
-      {steps.map((step) => {
-        return <RscStep {...step} />;
+      {steps.map((step, i) => {
+        return <RscStep key={i} {...step} />;
       })}
     </div>
   );
