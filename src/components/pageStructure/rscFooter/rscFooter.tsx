@@ -7,7 +7,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { memo } from "react";
 import { Link } from "react-router-dom";
-import { RscLogo, RscText } from "../../general";
+import { RscLogo, RscText, RscTitle } from "../../design-system";
 import { rscRoutes } from "../../shared";
 import "./RscFooter.scss";
 
@@ -22,9 +22,10 @@ const RscFooter: React.FC = () => {
             </div>
             <div className="menu-container">
               <div className="title">
-                <RscText type="h2" content={"SITEMAP"} />
+                <RscTitle level={2}>SITEMAP</RscTitle>
               </div>
               <div className="entries">
+                {/* TODO: Refactor with nav list */}
                 <div className="entry">
                   <Link to={rscRoutes.aboutUs.url}>WHO WE ARE</Link>
                 </div>
@@ -38,7 +39,7 @@ const RscFooter: React.FC = () => {
             </div>
             <div className="social-container">
               <div className="title">
-                <RscText type="h2" content={"SOCIAL NETWORK"} />
+                <RscTitle level={2}>SOCIAL NETWORK</RscTitle>
               </div>
               <div className="socials">
                 <div className="row">
@@ -60,10 +61,14 @@ const RscFooter: React.FC = () => {
             <div className="newsletter"></div>
           </div>
           <div className="bottom-container">
-            Copyright © 2022, RSC Enterprises, All rights reserved
+            <RscText type="span">
+              Copyright © 2022, RSC Enterprises, All rights reserved
+            </RscText>
             <div className="creator">
-              Site made by Sebastian Fries, SF (
-              <a href={"https://linktr.ee/sebastianfries"}>Linktree</a>)
+              <RscText type="span">
+                Site made by Sebastian Fries, SF (
+                <a href={"https://linktr.ee/sebastianfries"}>Linktree</a>
+              </RscText>
             </div>
           </div>
         </div>

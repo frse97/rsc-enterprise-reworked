@@ -1,61 +1,15 @@
 import { memo } from "react";
-import { RscFileDownloadSection, RscParticles } from "../../general";
 import "./Home.scss";
-import { RscSteps, rscStepsStructure } from "../../general/RscSteps";
-import { homeParticlesOptions } from "./Home.data";
-import { RscButton } from "../../general/button";
-import { rscRoutes } from "../../shared";
-import { RscText } from "../../general/text";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBolt } from "@fortawesome/free-solid-svg-icons";
-import { IconProp } from "@fortawesome/fontawesome-svg-core";
-
-interface IHomeMainBackground {
-  /**
-   * Identifier if the home background should have particles
-   * @default false
-   */
-  hasParticles?: boolean;
-}
-
-const HomeMainBackground: React.FC<IHomeMainBackground> = (props) => {
-  const { hasParticles = false } = props;
-
-  return (
-    <div className="home-intro-area">
-      <div className="home-bg">
-        <div className="rsc-title">
-          <RscText
-            type="span"
-            content={
-              <>
-                Tailor-made Web3 solution <br /> for businesses and brands
-              </>
-            }
-          />
-        </div>
-        {hasParticles && <RscParticles options={homeParticlesOptions} />}
-      </div>
-      <div className="rsc-main-cta">
-        <RscButton
-          label="Discover our services"
-          size="lg"
-          color="mainBlue"
-          isFilled={false}
-          href={rscRoutes.services.url}
-          icon={<FontAwesomeIcon icon={faBolt as IconProp} />}
-        />
-      </div>
-    </div>
-  );
-};
+import { HomeMainBackground } from "./components";
+import { RscFileDownloadSection, RscSteps } from "../../design-system";
+import { pdfList, rscStepsStructure } from "../../data";
 
 const RscHome: React.FC = () => {
   return (
     <div className="rsc-home">
       <HomeMainBackground />
       <RscSteps steps={rscStepsStructure} />
-      <RscFileDownloadSection />
+      <RscFileDownloadSection fileList={pdfList} />
     </div>
   );
 };

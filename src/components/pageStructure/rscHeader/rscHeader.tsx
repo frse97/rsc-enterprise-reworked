@@ -1,6 +1,6 @@
 import { memo } from "react";
 import { Link } from "react-router-dom";
-import { RscLogo } from "../../general";
+import { RscLogo } from "../../design-system";
 import { rscRoutes } from "../../shared";
 import "./RscHeader.scss";
 
