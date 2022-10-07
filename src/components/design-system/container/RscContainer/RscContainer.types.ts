@@ -1,4 +1,4 @@
-import { CommonProps } from "../../models";
+import { CommonProps } from "../../../shared";
 
 export type RscContainerType = "div" | "section";
 

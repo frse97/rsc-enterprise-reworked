@@ -14,4 +14,12 @@
     flex-grow: 1;
     margin-left: 60px;
   }
+
+  // Styling when rendered on services page
+  &.is-on-services {
+    background-color: var(--primary-color6);
+    margin: 0;
+    padding: 0 24px;
+    border-bottom: 2px solid var(--light-bg);
+  }
 }

@@ -1,24 +1,26 @@
-import { memo, useCallback, useState } from "react";
+import { memo, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { IRscNavbar, IRscNavItem } from "./RscNavbar.types";
 import cs from "classnames";
 import "./RscNavbar.scss";
-import { RouteKeys } from "../../../shared";
 
+/**
+ * A component to display a single navigation item
+ */
 const RscNavItem: React.FC<IRscNavItem> = (props) => {
-  const { name, url, itemKey, active, setActive, items } = props;
+  const { name, url, itemKey, activeRoute, setActiveRoute, items } = props;
 
-  console.log("ITEM", itemKey, active);
+  console.log("ITEM", itemKey, activeRoute);
 
   const className = cs("rsc-nav-item", {
-    "is-active": active === itemKey,
+    "is-active": activeRoute === itemKey,
   });
 
   const handleOnClick = useCallback(() => {
-    if (setActive) {
-      setActive(itemKey);
+    if (setActiveRoute) {
+      setActiveRoute(itemKey);
     }
-  }, [itemKey, setActive]);
+  }, [itemKey, setActiveRoute]);
 
   return (
     <div className={className} onClick={handleOnClick}>
@@ -27,11 +29,11 @@ const RscNavItem: React.FC<IRscNavItem> = (props) => {
   );
 };
 
+/**
+ * A component to display the navigation navbar
+ */
 const RscNavbar: React.FC<IRscNavbar> = (props) => {
-  const { items, active } = props;
-  console.log("ITEMS", items);
-
-  const [activeItem, setActiveItem] = useState<RouteKeys>(active);
+  const { items, activeRoute, setActiveRoute } = props;
 
   return (
     <div className="rsc-navigation">
@@ -42,8 +44,8 @@ const RscNavbar: React.FC<IRscNavbar> = (props) => {
             name={item.name}
             url={item.url}
             items={item.items}
-            active={activeItem}
-            setActive={setActiveItem}
+            activeRoute={activeRoute}
+            setActiveRoute={setActiveRoute}
           />
         );
       })}

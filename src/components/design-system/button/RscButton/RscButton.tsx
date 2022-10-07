@@ -1,77 +1,9 @@
-import { CSSProperties, memo, ReactNode, useMemo } from "react";
+import { CSSProperties, memo, useMemo } from "react";
 import cs from "classnames";
 import "./RscButton.scss";
 import { Link } from "react-router-dom";
-import { transformColorToHex } from "./RscButton.utils";
-
-/**
- * The native button type
- */
-type RscNativeButtonType = "button" | "submit" | "reset";
-/**
- * The sizes of buttons
- */
-type RscButtonSize = "sm" | "md" | "lg" | "xl";
-/**
- * The type of colors for the button (used in primary)
- */
-export type RscColors =
-  | "mainBlue"
-  | "grayBlue"
-  | "lightBlue"
-  | "darkBlue"
-  | "acquaMarineBlue"
-  | "default";
-
-/**
- * The properties of the `RscButton` component
- */
-interface IRscButton {
-  /**
-   * The className of the button
-   */
-  className?: string;
-  /**
-   * The label of the button
-   */
-  label?: ReactNode;
-  /**
-   * The icon of the button
-   */
-  icon?: ReactNode;
-  /**
-   * The native type of the button
-   * @default 'button'
-   */
-  nativeType?: RscNativeButtonType;
-  /**
-   * The primary color of the button
-   */
-  color?: RscColors;
-  /**
-   * The size of the button
-   * @default 'md'
-   */
-  size?: RscButtonSize;
-  /**
-   * Identifier if the button should have strong label
-   * @default 'true'
-   */
-  strong?: boolean;
-  /**
-   * The link to which the button connects
-   */
-  href?: string;
-  /**
-   * The method which the button calls
-   */
-  onClick?: () => void;
-  /**
-   * An identifier if the color should fill the background
-   * @default true
-   */
-  isFilled?: boolean;
-}
+import { utils } from "../../../shared";
+import { IRscButton } from "./RscButton.types";
 
 const RscButton: React.FC<IRscButton> = (props) => {
   const {
@@ -85,12 +17,27 @@ const RscButton: React.FC<IRscButton> = (props) => {
     strong = true,
     href,
     onClick,
+    margin,
+    padding,
   } = props;
+
+  const marginClassNames = useMemo(
+    // TODO: Initialize default values
+    () => utils.spacing.marginToClassName(margin || {}),
+    [margin]
+  );
+  // TODO: Initiallize default values
+  const paddingClassNames = useMemo(
+    () => utils.spacing.paddingToClassName(padding || {}),
+    [padding]
+  );
 
   const classNames = cs(
     "rsc-button",
     className,
     isFilled ? "is-filled" : "is-not-filled",
+    marginClassNames,
+    paddingClassNames,
     {
       "is-small": size === "sm",
       "is-middle": size === "md",
@@ -101,7 +48,7 @@ const RscButton: React.FC<IRscButton> = (props) => {
   );
 
   const mergedStyles: CSSProperties & { "--rsc-primary-btn-color"?: string } = {
-    "--rsc-primary-btn-color": `${transformColorToHex(color)}`,
+    "--rsc-primary-btn-color": `${utils.colors.transformColorToHex(color)}`,
   };
 
   const buttonContent: JSX.Element = useMemo(() => {

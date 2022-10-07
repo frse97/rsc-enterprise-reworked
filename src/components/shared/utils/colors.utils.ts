@@ -1,4 +1,4 @@
-import { RscColors } from "./RscButton";
+import { RscColors } from "../model";
 
 export const transformColorToHex = (color: RscColors) => {
   if (color === "mainBlue") {

@@ -1,4 +1,4 @@
-import { RouteKeys } from "../../../shared";
+import { RouteKey } from "../../../shared";
 
 /**
  * The properties for a single `RscNavItem` component
@@ -7,7 +7,7 @@ export interface IRscNavItem {
   /**
    * The key of the item
    */
-  itemKey: RouteKeys;
+  itemKey: RouteKey;
   /**
    * The url of the item
    */
@@ -19,7 +19,7 @@ export interface IRscNavItem {
   /**
    * Identifier if the item is active
    */
-  active?: RouteKeys;
+  activeRoute?: RouteKey;
   /**
    * The children of the item (max 2 levels)
    */
@@ -27,7 +27,7 @@ export interface IRscNavItem {
   /**
    * A method to change routing
    */
-  setActive?: React.Dispatch<React.SetStateAction<RouteKeys>>;
+  setActiveRoute?: React.Dispatch<React.SetStateAction<RouteKey>>;
 }
 
 /**
@@ -39,7 +39,11 @@ export interface IRscNavbar {
    */
   items: IRscNavItem[];
   /**
-   * The active item of the navbar
+   * The active route
    */
-  active: RouteKeys;
+  activeRoute: RouteKey;
+  /**
+   * A method to change the active route
+   */
+  setActiveRoute: React.Dispatch<React.SetStateAction<RouteKey>>;
 }

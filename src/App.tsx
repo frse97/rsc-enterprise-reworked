@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as RscRouter } from "react-router-dom";
 import { RscFooter, RscHeader, RscMain } from "./components";
+import { RouteKey } from "./components/shared";
 
 // Import styles
 import "./styles/theme.scss";
 
 const App: React.FC = () => {
   const [firstRender, setFirstRender] = useState<boolean>(false);
+
+  // TODO: Initialize value with the current active route from react-dom, otherwise fallback on "home"
+  const [activeRoute, setActiveRoute] = useState<RouteKey>("home");
 
   useEffect(() => {
     if (!firstRender) {
@@ -18,7 +22,7 @@ const App: React.FC = () => {
   return (
     <RscRouter>
       <div className="rsc-app">
-        <RscHeader />
+        <RscHeader activeRoute={activeRoute} setActiveRoute={setActiveRoute} />
         <RscMain />
         <RscFooter />
       </div>

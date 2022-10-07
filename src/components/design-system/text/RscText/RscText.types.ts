@@ -1,4 +1,4 @@
-import { CommonText } from "../../models/text.types";
+import { CommonText } from "../../../shared";
 
 /**
  * The types of text

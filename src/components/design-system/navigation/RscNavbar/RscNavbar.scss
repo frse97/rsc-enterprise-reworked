@@ -9,8 +9,8 @@
       a {
         padding: 8px 12px;
         border-radius: 8px;
-        // background: rgba(0, 0, 0, 0.3);
-        background-color: var(--primary-color1);
+        background-color: rgba(0, 0, 0, 0.8);
+        transition: all ease-in-out 0.2s;
       }
     }
 
@@ -25,7 +25,8 @@
       text-decoration: none;
 
       &:hover {
-        background: var(--primary-color4);
+        transition: all ease-in-out 0.2s;
+        background: rgba(0, 0, 0, 0.4);
       }
     }
   }

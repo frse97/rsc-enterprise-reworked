@@ -1,32 +1,33 @@
 import { memo, useMemo } from "react";
-import { IRscNavItem, RscLogo } from "../../design-system";
+import { RscLogo } from "../../design-system";
 import { RscNavbar } from "../../design-system";
-import { rscRoutes } from "../../shared";
+import cs from "classnames";
+import { utils } from "../../shared";
 import "./RscHeader.scss";
+import { IRscHeader } from "./RscHeader.types";
 
-const routeToNavItems = () => {
-  const items: IRscNavItem[] = [];
+/**
+ * A component to display the header
+ */
+const RscHeader: React.FC<IRscHeader> = (props) => {
+  const { activeRoute, setActiveRoute } = props;
 
-  for (const [key, value] of Object.entries(rscRoutes)) {
-    const item: IRscNavItem = {
-      itemKey: value.key,
-      name: value.name,
-      url: value.url,
-      items: value.items,
-    };
-    items.push(item);
-  }
-  return items;
-};
+  const navItems = useMemo(() => utils.routing.routeToNavItems(), []);
 
-const RscHeader: React.FC = () => {
-  const navItems = useMemo(() => routeToNavItems(), []);
+  const classNames = cs("rsc-header", {
+    "is-on-services": activeRoute === "services",
+  });
+
   return (
-    <header className="rsc-header">
+    <header className={classNames}>
       <div className="logo-container">
         <RscLogo />
       </div>
-      <RscNavbar items={navItems} active="home" />
+      <RscNavbar
+        items={navItems}
+        activeRoute={activeRoute}
+        setActiveRoute={setActiveRoute}
+      />
     </header>
   );
 };

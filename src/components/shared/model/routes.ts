@@ -1,4 +1,4 @@
-export type RouteKeys =
+export type RouteKey =
   | "home"
   | "services"
   | "aboutUs"
@@ -11,7 +11,7 @@ export type RouteKeys =
  */
 interface IRscRoute {
   // The key of the route
-  key: RouteKeys;
+  key: RouteKey;
   // The url of the route
   url: string;
   // The translation key for the route

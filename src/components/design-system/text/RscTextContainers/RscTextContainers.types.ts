@@ -1,4 +1,4 @@
-import { HasChildren } from "../../models";
+import { HasChildren } from "../../../shared";
 
 export interface IRscBlockQuote extends HasChildren {
   /**
