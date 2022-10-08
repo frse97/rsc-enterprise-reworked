@@ -1,15 +1,37 @@
 import React, { useEffect, useState } from "react";
-import { BrowserRouter as RscRouter } from "react-router-dom";
+import { BrowserRouter as RscRouter, useLocation } from "react-router-dom";
 import { RscFooter, RscHeader, RscMain } from "./components";
-import { RouteKey } from "./components/shared";
+import { RouteKey, utils } from "./components/shared";
 
 // Import styles
 import "./styles/theme.scss";
 
+/**
+ * The properties of the `LocationUpdater` component
+ */
+interface ILocationUpdater {
+  /**
+   * A method to update the route
+   */
+  setActiveRoute: React.Dispatch<React.SetStateAction<RouteKey>>;
+}
+
+const LocationUpdater: React.FC<ILocationUpdater> = (props) => {
+  const { setActiveRoute } = props;
+  // Check the current route to set navigation correctly
+  const location = useLocation();
+  useEffect(() => {
+    const lastPath = utils.routing.extractLastPath(location);
+
+    console.log("LAST PATH", lastPath);
+    setActiveRoute(lastPath);
+  }, [location, setActiveRoute]);
+  return <></>;
+};
+
 const App: React.FC = () => {
   const [firstRender, setFirstRender] = useState<boolean>(false);
 
-  // TODO: Initialize value with the current active route from react-dom, otherwise fallback on "home"
   const [activeRoute, setActiveRoute] = useState<RouteKey>("home");
 
   useEffect(() => {
@@ -21,6 +43,7 @@ const App: React.FC = () => {
 
   return (
     <RscRouter>
+      <LocationUpdater setActiveRoute={setActiveRoute} />
       <div className="rsc-app">
         <RscHeader activeRoute={activeRoute} setActiveRoute={setActiveRoute} />
         <RscMain />

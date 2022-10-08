@@ -7,8 +7,6 @@ export const marginToClassName = (margin: RscMargin) => {
   let className = "";
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   for (const [key, value] of Object.entries(margin)) {
-    console.log("key value", key, typeof key, value, typeof value);
-
     if (key === "top") {
       className = className.concat(`.mt-${value} `);
     }
@@ -32,8 +30,6 @@ export const paddingToClassName = (padding: RscPadding) => {
   let className = "";
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   for (const [key, value] of Object.entries(padding)) {
-    console.log("key value", key, typeof key, value, typeof value);
-
     if (key === padding.top) {
       className = className.concat(`.pt-${value} `);
     }

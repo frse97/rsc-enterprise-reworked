@@ -5,6 +5,7 @@ import cs from "classnames";
 import { utils } from "../../shared";
 import "./RscHeader.scss";
 import { IRscHeader } from "./RscHeader.types";
+import { useLocation } from "react-router-dom";
 
 /**
  * A component to display the header

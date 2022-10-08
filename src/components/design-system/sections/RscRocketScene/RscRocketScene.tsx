@@ -33,9 +33,7 @@ export const RscSpaceBg: React.FC = () => {
   };
   const particlesLoaded = (container?: Container): Promise<void> => {
     const a = Promise.resolve();
-    return a.then(() => {
-      console.log("LOADED", container);
-    });
+    return a.then(() => {});
   };
   return (
     <Particles

@@ -1,8 +1,8 @@
 export type RouteKey =
   | "home"
   | "services"
-  | "aboutUs"
-  | "contactUs"
+  | "about-us"
+  | "contact-us"
   | "web3Adoption"
   | "enterpriseBlockchain";
 
@@ -57,13 +57,13 @@ export const rscRoutes: IRscRoutes = {
   },
   // The route for the about us page
   aboutUs: {
-    key: "aboutUs",
+    key: "about-us",
     url: "/rsc-enterprise-reworked/about-us",
     name: "Who we are",
   },
   // The route for the contact page
   contactUs: {
-    key: "contactUs",
+    key: "contact-us",
     url: "/rsc-enterprise-reworked/contact-us",
     name: "Contact us",
   },

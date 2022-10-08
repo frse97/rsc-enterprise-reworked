@@ -13,7 +13,7 @@ const root = ReactDOMClient.createRoot(container);
 type RenderCallBackPhases = "mount" | "update";
 
 const onRenderCallback = (id: string, phase?: RenderCallBackPhases) => {
-  console.log("PHASE", phase, id);
+  // console.log("PHASE", phase, id);
   // if (phase === "mount") {
   //   document.documentElement.setAttribute("data-theme", "light");
   //   document.documentElement.setAttribute("data-vars", "frse");

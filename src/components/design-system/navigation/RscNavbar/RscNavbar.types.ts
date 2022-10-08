@@ -28,6 +28,14 @@ export interface IRscNavItem {
    * A method to change routing
    */
   setActiveRoute?: React.Dispatch<React.SetStateAction<RouteKey>>;
+  /**
+   * Identifier if there are any open items
+   */
+  open?: boolean;
+  /**
+   * A method to open subitems
+   */
+  setOpen?: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 /**

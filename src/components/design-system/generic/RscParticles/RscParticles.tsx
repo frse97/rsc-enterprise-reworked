@@ -18,16 +18,12 @@ const RscParticles: React.FC<IRscParticles> = (props) => {
   const { options } = props;
 
   const particlesInit = async (main: Engine) => {
-    console.log(main);
-
     // Loads tsparticles package bundle
     await loadFull(main);
   };
   const particlesLoaded = (container?: Container): Promise<void> => {
     const a = Promise.resolve();
-    return a.then(() => {
-      console.log("LOADED", container);
-    });
+    return a.then(() => {});
   };
 
   return (

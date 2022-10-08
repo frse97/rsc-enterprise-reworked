@@ -5,6 +5,7 @@ import {
   RscText,
   RscTitle,
 } from "../../design-system";
+import { CryptoFlowersIcon, NakamotoIcon } from "../../icons";
 import "./Services.scss";
 
 /**
@@ -17,6 +18,7 @@ const Services: React.FC = () => {
         type="div"
         className="service-web3adoption service-container"
       >
+        <CryptoFlowersIcon />
         <RscTitle level={1} className="service-title">
           Web3 Adoption
         </RscTitle>
@@ -33,6 +35,7 @@ const Services: React.FC = () => {
         type="div"
         className="service-enterpriseblockchain service-container"
       >
+        <NakamotoIcon />
         <RscTitle level={1} className="service-title">
           Enterprise Blockchain
         </RscTitle>
