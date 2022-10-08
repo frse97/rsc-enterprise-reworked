@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/rsc-enterprise-reworked/static/css/main.81603606.css",
-    "main.js": "/rsc-enterprise-reworked/static/js/main.0abb0c06.js",
+    "main.css": "/rsc-enterprise-reworked/static/css/main.9f0acd43.css",
+    "main.js": "/rsc-enterprise-reworked/static/js/main.8a3a21ec.js",
     "static/js/787.ac421169.chunk.js": "/rsc-enterprise-reworked/static/js/787.ac421169.chunk.js",
     "index.html": "/rsc-enterprise-reworked/index.html",
-    "main.81603606.css.map": "/rsc-enterprise-reworked/static/css/main.81603606.css.map",
-    "main.0abb0c06.js.map": "/rsc-enterprise-reworked/static/js/main.0abb0c06.js.map",
+    "main.9f0acd43.css.map": "/rsc-enterprise-reworked/static/css/main.9f0acd43.css.map",
+    "main.8a3a21ec.js.map": "/rsc-enterprise-reworked/static/js/main.8a3a21ec.js.map",
     "787.ac421169.chunk.js.map": "/rsc-enterprise-reworked/static/js/787.ac421169.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.81603606.css",
-    "static/js/main.0abb0c06.js"
+    "static/css/main.9f0acd43.css",
+    "static/js/main.8a3a21ec.js"
   ]
 }
