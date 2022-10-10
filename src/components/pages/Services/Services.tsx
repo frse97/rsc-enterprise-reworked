@@ -28,6 +28,8 @@ const Services: React.FC = () => {
         </RscText>
         <RscButton
           label="Start to adapt!"
+          color="callToAction"
+          isFilled={false}
           margin={{ top: "xxl", left: "xs", right: "xs" }}
         />
       </RscContainer>
@@ -43,7 +45,7 @@ const Services: React.FC = () => {
           Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem
           ipsum Lorem ipsum
         </RscText>
-        <RscButton label="Explore more" />
+        <RscButton label="Explore more" isFilled={false} color="callToAction" />
       </RscContainer>
     </RscContainer>
   );

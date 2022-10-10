@@ -22,8 +22,6 @@ const LocationUpdater: React.FC<ILocationUpdater> = (props) => {
   const location = useLocation();
   useEffect(() => {
     const lastPath = utils.routing.extractLastPath(location);
-
-    console.log("LAST PATH", lastPath);
     setActiveRoute(lastPath);
   }, [location, setActiveRoute]);
   return <></>;

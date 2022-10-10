@@ -34,7 +34,7 @@ export interface IRscButton {
   /**
    * The primary color of the button
    */
-  color?: RscColors;
+  color?: string | RscColors;
   /**
    * The size of the button
    * @default 'md'

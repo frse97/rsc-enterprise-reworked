@@ -7,4 +7,5 @@ export type RscColors =
   | "lightBlue"
   | "darkBlue"
   | "acquaMarineBlue"
+  | "callToAction"
   | "default";

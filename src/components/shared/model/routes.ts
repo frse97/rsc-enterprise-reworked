@@ -3,15 +3,15 @@ export type RouteKey =
   | "services"
   | "about-us"
   | "contact-us"
-  | "web3Adoption"
-  | "enterpriseBlockchain";
+  | "web3-adoption"
+  | "enterprise-blockchain";
 
 /**
  * A single rsc route
  */
 interface IRscRoute {
   // The key of the route
-  key: RouteKey;
+  itemKey: RouteKey;
   // The url of the route
   url: string;
   // The translation key for the route
@@ -33,23 +33,23 @@ interface IRscRoutes {
 export const rscRoutes: IRscRoutes = {
   // The home route.
   home: {
-    key: "home",
+    itemKey: "home",
     url: "/rsc-enterprise-reworked",
     name: "Home",
   },
   // The route for the services page
   services: {
-    key: "services",
+    itemKey: "services",
     url: "/rsc-enterprise-reworked/services",
     name: "Services",
     items: [
       {
-        key: "web3Adoption",
+        itemKey: "web3-adoption",
         url: "/rsc-enterprise-reworked/services/web3-adoption",
         name: "Web3 Adoption",
       },
       {
-        key: "enterpriseBlockchain",
+        itemKey: "enterprise-blockchain",
         url: "/rsc-enterprise-reworked/services/enterprise-blockchain",
         name: "Enterprise Blockchain",
       },
@@ -57,13 +57,13 @@ export const rscRoutes: IRscRoutes = {
   },
   // The route for the about us page
   aboutUs: {
-    key: "about-us",
+    itemKey: "about-us",
     url: "/rsc-enterprise-reworked/about-us",
     name: "Who we are",
   },
   // The route for the contact page
   contactUs: {
-    key: "contact-us",
+    itemKey: "contact-us",
     url: "/rsc-enterprise-reworked/contact-us",
     name: "Contact us",
   },

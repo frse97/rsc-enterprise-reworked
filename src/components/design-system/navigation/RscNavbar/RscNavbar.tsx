@@ -59,11 +59,16 @@ const RscNavItem: React.FC<IRscNavItem> = (props) => {
       {items && (
         <div className={childrenClassName}>
           {items?.map((item) => {
-            console.log("item", item);
+            const childrenClassName = cs("rsc-nav-item", {
+              "is-active": activeRoute === item.itemKey,
+            });
+
             return (
-              <Link onClick={handleOnClick} to={item.url}>
-                {item.name}
-              </Link>
+              <div className={childrenClassName}>
+                <Link onClick={handleOnClick} to={item.url}>
+                  {item.name}
+                </Link>
+              </div>
             );
           })}
         </div>
@@ -79,6 +84,8 @@ const RscNavbar: React.FC<IRscNavbar> = (props) => {
   const { items, activeRoute, setActiveRoute } = props;
 
   const [open, setOpen] = useState(false);
+
+  console.log("NAV ITEMS", items);
 
   return (
     <div className="rsc-navigation">

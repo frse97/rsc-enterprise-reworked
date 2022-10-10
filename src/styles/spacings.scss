@@ -1,0 +1,260 @@
+// No Spacing
+$spacing-none: 0;
+// Very very Small Spacing
+$spacing-xxs: 2px;
+// Very Small Spacing
+$spacing-xs: 4px;
+// Small Spacing
+$spacing-sm: 8px;
+// Middle Spacing
+$spacing-md: 12px;
+// Large Spacing
+$spacing-lg: 16px;
+// Very large Spacing
+$spacing-xl: 32px;
+// Very very large Spacing
+$spacing-xxl: 64px;
+// Very very very large Spacing
+$spacing-xxxl: 128px;
+
+// Margin top
+.mt {
+  &-none {
+    margin-top: $spacing-none;
+  }
+  &-xxs {
+    margin-top: $spacing-xxs;
+  }
+  &-xs {
+    margin-top: $spacing-xs;
+  }
+  &-sm {
+    margin-top: $spacing-sm;
+  }
+  &-md {
+    margin-top: $spacing-md;
+  }
+  &-lg {
+    margin-top: $spacing-lg;
+  }
+  &-xl {
+    margin-top: $spacing-xl;
+  }
+  &-xxl {
+    margin-top: $spacing-xxl;
+  }
+  &-xxxl {
+    margin-top: $spacing-xxxl;
+  }
+}
+// Margin left
+.ml {
+  &-none {
+    margin-left: $spacing-none;
+  }
+  &-xxs {
+    margin-left: $spacing-xxs;
+  }
+  &-xs {
+    margin-left: $spacing-xs;
+  }
+  &-sm {
+    margin-left: $spacing-sm;
+  }
+  &-md {
+    margin-left: $spacing-md;
+  }
+  &-lg {
+    margin-left: $spacing-lg;
+  }
+  &-xl {
+    margin-left: $spacing-xl;
+  }
+  &-xxl {
+    margin-left: $spacing-xxl;
+  }
+  &-xxxl {
+    margin-left: $spacing-xxxl;
+  }
+}
+// Margin right
+.mr {
+  &-none {
+    margin-right: $spacing-none;
+  }
+  &-xxs {
+    margin-right: $spacing-xxs;
+  }
+  &-xs {
+    margin-right: $spacing-xs;
+  }
+  &-sm {
+    margin-right: $spacing-sm;
+  }
+  &-md {
+    margin-right: $spacing-md;
+  }
+  &-lg {
+    margin-right: $spacing-lg;
+  }
+  &-xl {
+    margin-right: $spacing-xl;
+  }
+  &-xxl {
+    margin-right: $spacing-xxl;
+  }
+  &-xxxl {
+    margin-right: $spacing-xxxl;
+  }
+}
+// Margin bottom
+.mb {
+  &-none {
+    margin-bottom: $spacing-none;
+  }
+  &-xxs {
+    margin-bottom: $spacing-xxs;
+  }
+  &-xs {
+    margin-bottom: $spacing-xs;
+  }
+  &-sm {
+    margin-bottom: $spacing-sm;
+  }
+  &-md {
+    margin-bottom: $spacing-md;
+  }
+  &-lg {
+    margin-bottom: $spacing-lg;
+  }
+  &-xl {
+    margin-bottom: $spacing-xl;
+  }
+  &-xxl {
+    margin-bottom: $spacing-xxl;
+  }
+  &-xxxl {
+    margin-bottom: $spacing-xxxl;
+  }
+}
+
+// Padding top
+.pt {
+  &-none {
+    padding-top: $spacing-none;
+  }
+  &-xxs {
+    padding-top: $spacing-xxs;
+  }
+  &-xs {
+    padding-top: $spacing-xs;
+  }
+  &-sm {
+    padding-top: $spacing-sm;
+  }
+  &-md {
+    padding-top: $spacing-md;
+  }
+  &-lg {
+    padding-top: $spacing-lg;
+  }
+  &-xl {
+    padding-top: $spacing-xl;
+  }
+  &-xxl {
+    padding-top: $spacing-xxl;
+  }
+  &-xxxl {
+    padding-top: $spacing-xxxl;
+  }
+}
+// Padding left
+.pl {
+  &-none {
+    padding-left: $spacing-none;
+  }
+  &-xxs {
+    padding-left: $spacing-xxs;
+  }
+  &-xs {
+    padding-left: $spacing-xs;
+  }
+  &-sm {
+    padding-left: $spacing-sm;
+  }
+  &-md {
+    padding-left: $spacing-md;
+  }
+  &-lg {
+    padding-left: $spacing-lg;
+  }
+  &-xl {
+    padding-left: $spacing-xl;
+  }
+  &-xxl {
+    padding-left: $spacing-xxl;
+  }
+  &-xxxl {
+    padding-left: $spacing-xxxl;
+  }
+}
+// Padding right
+.pr {
+  &-none {
+    padding-right: $spacing-none;
+  }
+  &-xxs {
+    padding-right: $spacing-xxs;
+  }
+  &-xs {
+    padding-right: $spacing-xs;
+  }
+  &-sm {
+    padding-right: $spacing-sm;
+  }
+  &-md {
+    padding-right: $spacing-md;
+  }
+  &-lg {
+    padding-right: $spacing-lg;
+  }
+  &-xl {
+    padding-right: $spacing-xl;
+  }
+  &-xxl {
+    padding-right: $spacing-xxl;
+  }
+  &-xxxl {
+    padding-right: $spacing-xxxl;
+  }
+}
+// Padding bottom
+.mb {
+  &-none {
+    padding-bottom: $spacing-none;
+  }
+  &-xxs {
+    padding-bottom: $spacing-xxs;
+  }
+  &-xs {
+    padding-bottom: $spacing-xs;
+  }
+  &-sm {
+    padding-bottom: $spacing-sm;
+  }
+  &-md {
+    padding-bottom: $spacing-md;
+  }
+  &-lg {
+    padding-bottom: $spacing-lg;
+  }
+  &-xl {
+    padding-bottom: $spacing-xl;
+  }
+  &-xxl {
+    padding-bottom: $spacing-xxl;
+  }
+  &-xxxl {
+    padding-bottom: $spacing-xxxl;
+  }
+}

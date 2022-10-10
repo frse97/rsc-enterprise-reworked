@@ -30,11 +30,16 @@
     animation: gradient 6s ease-in-out infinite;
 
     .home-bg-title {
-      margin-top: 6%;
+      margin-top: 12vh;
       margin-left: 6%;
       transform: rotate(5deg);
       color: var(--primary-color3);
       text-transform: uppercase;
+      max-width: 72vw;
+
+      .rsc-title {
+        font-size: clamp(24px, 3vw, 48px);
+      }
     }
   }
 

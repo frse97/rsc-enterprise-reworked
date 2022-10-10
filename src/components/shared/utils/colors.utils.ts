@@ -1,6 +1,6 @@
 import { RscColors } from "../model";
 
-export const transformColorToHex = (color: RscColors) => {
+export const transformColorToHex = (color: string | RscColors) => {
   if (color === "mainBlue") {
     return "#0015ff";
   } else if (color === "grayBlue") {
@@ -11,5 +11,9 @@ export const transformColorToHex = (color: RscColors) => {
     return "#06003c";
   } else if (color === "acquaMarineBlue") {
     return "#00dbce";
+  } else if (color === "callToAction") {
+    return "#ff8c00";
+  } else {
+    return color;
   }
 };

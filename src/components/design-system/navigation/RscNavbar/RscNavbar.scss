@@ -1,12 +1,12 @@
 .rsc-navigation {
   display: flex;
   align-items: center;
-  font-size: 20px;
-  margin-right: 128px;
+  font-size: clamp(1.2rem, 1.2vw, 4rem);
 
   // The navbar item container
   .rsc-nav-item-container {
     position: relative;
+    margin-right: 0.8vw;
   }
 
   // The navbar item
@@ -18,7 +18,7 @@
       a {
         padding: 8px 12px;
         border-radius: 8px;
-        background-color: rgba(0, 0, 0, 0.8);
+        background-color: var(--call-to-action-active);
         transition: all ease-in-out 0.2s;
       }
     }
@@ -37,8 +37,6 @@
       }
     }
 
-    margin-right: 48px;
-
     a {
       padding: 8px 12px;
       border-radius: 8px;
@@ -48,7 +46,7 @@
       &:hover {
         font-weight: bold;
         transition: all ease-in-out 0.2s;
-        background: rgba(0, 0, 0, 0.4);
+        background: var(--call-to-action-hover);
       }
     }
 
@@ -61,7 +59,7 @@
       flex-direction: column;
       width: 210px;
       background-color: var(--primary-color6);
-      box-shadow: -1px 2px 4px 1px var(--light-bg);
+      box-shadow: 0px 0px 8px 0px var(--light-bg);
       padding: 8px 4px;
       border-radius: 20px;
       transition: all ease-in-out 0.2s;
@@ -88,10 +86,16 @@
 
         &:hover {
           transition: all ease-in-out 0.2s;
-          background: rgba(0, 0, 0, 0.4);
+          background: var(--call-to-action-hover);
           font-weight: bold;
         }
       }
     }
+  }
+}
+
+@media only screen and (max-width: var(--tablet-max)) {
+  * {
+    color: red;
   }
 }

@@ -6,8 +6,7 @@
 
   .service-web3adoption,
   .service-enterpriseblockchain {
-    // Remove header + padding
-    padding-top: calc(120px + 64px);
+    padding-top: 92px;
     padding-bottom: 400px;
     padding-left: 128px;
     padding-right: 128px;
@@ -28,8 +27,8 @@
     width: 50%;
 
     svg {
-      height: 120px;
-      max-width: 220px;
+      max-height: 280px;
+      max-width: 280px;
       transition: all ease-in-out 0.4s;
       opacity: 0;
     }
@@ -55,7 +54,6 @@
       transition: all ease-in-out 0.4s;
       background-color: var(--primary-color6);
       color: var(--light-bg);
-      // box-shadow: -6px 0px 16px 0px inset var(--light-bg);
       cursor: pointer;
 
       svg {

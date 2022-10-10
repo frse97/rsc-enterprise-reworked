@@ -11,8 +11,10 @@ export const routeToNavItems = () => {
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   for (const [key, value] of Object.entries(rscRoutes)) {
+    console.log("VALUE", value);
+
     const item: IRscNavItem = {
-      itemKey: value.key,
+      itemKey: value.itemKey,
       name: value.name,
       url: value.url,
       items: value.items,
@@ -28,7 +30,6 @@ export const routeToNavItems = () => {
 export const extractLastPath = (location: Location): RouteKey => {
   // If the splittet length is bigger then one we can assume we are not on the home route
   const paths = location.pathname.split("/");
-  console.log("paths", paths);
 
   // TODO: Refactor as soon as route changes to published version (length > 1)
   if (paths.length > 2) {

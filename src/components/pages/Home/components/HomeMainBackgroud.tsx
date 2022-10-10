@@ -11,7 +11,7 @@ const HomeMainBackground: React.FC<IHomeMainBackground> = (props) => {
     <div className="home-intro-area">
       <div className="home-bg">
         <div className="home-bg-title">
-          <RscTitle level={1} fontSize="48px">
+          <RscTitle level={1}>
             Tailor-made Web3 solution <br /> for businesses and brands
           </RscTitle>
         </div>
@@ -21,7 +21,7 @@ const HomeMainBackground: React.FC<IHomeMainBackground> = (props) => {
         <RscButton
           label="Discover our services"
           size="lg"
-          color="mainBlue"
+          color="callToAction"
           isFilled={false}
           href={rscRoutes.services.url}
         />

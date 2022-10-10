@@ -26,8 +26,6 @@ export const RscRocket: React.FC = () => {
 
 export const RscSpaceBg: React.FC = () => {
   const particlesInit = async (main: Engine) => {
-    console.log(main);
-
     // Loads tsparticles package bundle
     await loadFull(main);
   };
