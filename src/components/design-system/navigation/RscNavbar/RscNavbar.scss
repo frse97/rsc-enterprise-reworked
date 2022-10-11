@@ -1,12 +1,15 @@
+@import "../../../../styles/breakpoints.scss";
+
+// Desktop, Table Navigation
 .rsc-navigation {
   display: flex;
   align-items: center;
-  font-size: clamp(1.2rem, 1.2vw, 4rem);
 
   // The navbar item container
   .rsc-nav-item-container {
     position: relative;
     margin-right: 0.8vw;
+    font-size: clamp(16px, 2vw, 20px);
   }
 
   // The navbar item
@@ -54,48 +57,165 @@
     &s-children {
       position: absolute;
       opacity: 0;
-      bottom: -90px;
+      bottom: -108px;
       display: flex;
       flex-direction: column;
-      width: 210px;
+      width: 260px;
       background-color: var(--primary-color6);
-      box-shadow: 0px 0px 8px 0px var(--light-bg);
-      padding: 8px 4px;
-      border-radius: 20px;
+      box-shadow: 0px 0px 4px 0px var(--light-bg);
+      border-radius: 8px;
       transition: all ease-in-out 0.2s;
-
-      &.is-active {
-        a {
-          padding: 8px 12px;
-          border-radius: 8px;
-          background-color: rgba(0, 0, 0, 0.8);
-          transition: all ease-in-out 0.2s;
-        }
-      }
 
       &.is-open {
         opacity: 1;
       }
 
-      a {
-        padding: 2px 12px;
-        border-radius: 8px;
-        font-size: 18px;
-        color: var(--light-bg);
-        text-decoration: none;
+      // Child
+      .rsc-nav-child {
+        padding: 8px;
+
+        &:first-child {
+          border-radius: 8px 8px 0 0;
+        }
+        &:last-child {
+          border-radius: 0 0 8px 8px;
+        }
+
+        &.is-active {
+          background-color: var(--call-to-action-active);
+        }
 
         &:hover {
-          transition: all ease-in-out 0.2s;
-          background: var(--call-to-action-hover);
-          font-weight: bold;
+          background-color: var(--call-to-action-hover);
+        }
+
+        a {
+          color: var(--light-bg);
+          text-decoration: none;
+
+          &:hover {
+            font-weight: bold;
+          }
         }
       }
     }
   }
 }
 
-@media only screen and (max-width: var(--tablet-max)) {
-  * {
-    color: red;
+// Mobile Navigation
+.rsc-mobile-navigation {
+  display: none;
+  width: 40px;
+  height: 40px;
+  padding: 4px;
+  z-index: 200 !important;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  .line {
+    width: 100%;
+    height: 6px;
+    background-color: var(--light-bg);
+    border-radius: 4px;
+    transition: all ease-in-out 0.2s;
+  }
+  .line:nth-child(2) {
+    margin: 6px 0;
+  }
+
+  &.is-expanded {
+    .line {
+      transition: all ease-in-out 0.2s;
+    }
+
+    .line:first-child {
+      transform: rotate(45deg) translate(10px, 10px);
+    }
+    .line:nth-child(2) {
+      visibility: hidden;
+    }
+    .line:last-child {
+      transform: rotate(135deg) translate(-5px, 10px);
+    }
+  }
+}
+
+.rsc-mobile-navigation-container {
+  display: none;
+
+  &.is-open {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--primary-color6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+
+    .rsc-nav-item-container {
+      font-size: 32px;
+
+      .rsc-nav-item,
+      .rsc-nav-child {
+        a {
+          padding: 4px 8px;
+          border-radius: 4px;
+          &:hover {
+            font-weight: bold;
+            background-color: var(--call-to-action-hover);
+          }
+        }
+
+        &.is-active {
+          a {
+            background-color: var(--call-to-action-active);
+          }
+        }
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 16px;
+      }
+
+      a {
+        text-transform: uppercase;
+        color: var(--light-bg);
+        text-decoration: none;
+      }
+    }
+    .rsc-nav-item-container:nth-child(2) {
+      display: block;
+      text-align: center;
+      margin-bottom: 0;
+
+      .rsc-nav-item,
+      .rsc-nav-child {
+        margin-bottom: 16px;
+      }
+
+      .rsc-arrow-down {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-md-max) {
+  .rsc-navigation {
+    display: none;
+  }
+  .rsc-mobile-navigation {
+    display: block;
+  }
+  .rsc-mobile-navigation-container.is-open {
+    display: flex;
   }
 }

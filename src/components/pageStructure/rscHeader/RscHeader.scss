@@ -15,11 +15,11 @@
     margin-left: 60px;
   }
 
-  // Styling when rendered on services page
-  &.is-on-services {
+  // Styling when rendered on other pages then home
+  &.is-not-on-home {
     background-color: var(--primary-color6);
     margin: 0;
-    padding: 0 24px;
+    padding-left: 0 24px;
     border-bottom: 2px solid var(--light-bg);
   }
 }

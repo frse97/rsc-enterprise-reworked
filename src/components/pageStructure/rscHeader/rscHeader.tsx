@@ -5,7 +5,6 @@ import cs from "classnames";
 import { utils } from "../../shared";
 import "./RscHeader.scss";
 import { IRscHeader } from "./RscHeader.types";
-import { useLocation } from "react-router-dom";
 
 /**
  * A component to display the header
@@ -16,7 +15,7 @@ const RscHeader: React.FC<IRscHeader> = (props) => {
   const navItems = useMemo(() => utils.routing.routeToNavItems(), []);
 
   const classNames = cs("rsc-header", {
-    "is-on-services": activeRoute === "services",
+    "is-not-on-home": activeRoute !== "home",
   });
 
   return (

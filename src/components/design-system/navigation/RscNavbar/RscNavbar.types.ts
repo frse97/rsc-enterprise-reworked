@@ -31,11 +31,19 @@ export interface IRscNavItem {
   /**
    * Identifier if there are any open items
    */
-  open?: boolean;
+  openChildren?: boolean;
   /**
-   * A method to open subitems
+   * A method to open/close subitems
    */
-  setOpen?: React.Dispatch<React.SetStateAction<boolean>>;
+  setOpenChildren?: React.Dispatch<React.SetStateAction<boolean>>;
+  /**
+   * Identifier if the mobile navigation is open
+   */
+  openMobileNav?: boolean;
+  /**
+   * A method to open/close mobile nav
+   */
+  setOpenMobileNav?: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 /**

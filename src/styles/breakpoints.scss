@@ -1,15 +1,15 @@
 // The breakpoint for small devices (mobile)
-$breakpoint-sm-min: 320;
-$breakpoint-sm-max: 480;
+$breakpoint-sm-min: "320px";
+$breakpoint-sm-max: "480px";
 
 // The breakpoint for medium devices (tablet)
-$breakpoint-md-min: 481;
-$breakpoint-md-max: 786;
+$breakpoint-md-min: "481px";
+$breakpoint-md-max: "786px";
 
 // The breakpoint for large devices (small screen)
-$breakpoint-lg-min: 787;
-$breakpoint-lg-max: 1024;
+$breakpoint-lg-min: "787px";
+$breakpoint-lg-max: "1024px";
 
 // The breakpoint for very large devices (large screen)
-$breakpoint-xl-min: 1025;
-$breakpoint-xl-max: 1200;
+$breakpoint-xl-min: "1025px";
+$breakpoint-xl-max: "1200px";
