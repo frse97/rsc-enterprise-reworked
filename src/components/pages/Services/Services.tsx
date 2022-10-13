@@ -6,6 +6,7 @@ import {
   RscTitle,
 } from "../../design-system";
 import { CryptoFlowersIcon, NakamotoIcon } from "../../icons";
+import { colors } from "../../shared";
 import "./Services.scss";
 
 /**
@@ -28,7 +29,7 @@ const Services: React.FC = () => {
         </RscText>
         <RscButton
           label="Start to adapt!"
-          color="callToAction"
+          color={colors.light.callToAction}
           isFilled={false}
           margin={{ top: "xxl", left: "xs", right: "xs" }}
         />
@@ -45,7 +46,11 @@ const Services: React.FC = () => {
           Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem
           ipsum Lorem ipsum
         </RscText>
-        <RscButton label="Explore more" isFilled={false} color="callToAction" />
+        <RscButton
+          label="Explore more"
+          isFilled={false}
+          color={colors.light.callToAction}
+        />
       </RscContainer>
     </RscContainer>
   );

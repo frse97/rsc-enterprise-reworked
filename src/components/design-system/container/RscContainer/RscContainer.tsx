@@ -10,6 +10,7 @@ const RscContainer: React.FC<IRscContainer> = (props) => {
     children,
     type,
     flex,
+    flexGrow,
     direction,
     alignCenter,
     justifyContentCenter,
@@ -18,6 +19,7 @@ const RscContainer: React.FC<IRscContainer> = (props) => {
 
   const classNames = cs("rsc-container", className, {
     "is-flex": flex,
+    "flex-grow": flexGrow,
     "flex-h": direction === "horizontal",
     "flex-v": direction === "vertical",
     "is-aligned-center": alignCenter,

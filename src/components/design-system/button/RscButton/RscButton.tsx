@@ -44,11 +44,12 @@ const RscButton: React.FC<IRscButton> = (props) => {
       "is-large": size === "lg",
       "is-extralarge": size === "xl",
       "is-strong": strong,
+      "has-no-label": icon && !label,
     }
   );
 
   const mergedStyles: CSSProperties & { "--rsc-primary-btn-color"?: string } = {
-    "--rsc-primary-btn-color": `${utils.colors.transformColorToHex(color)}`,
+    "--rsc-primary-btn-color": color as string,
   };
 
   const buttonContent: JSX.Element = useMemo(() => {

@@ -13,6 +13,10 @@ export interface IRscContainer extends CommonProps {
    */
   flex?: boolean;
   /**
+   * Identifier if the flex container should grow
+   */
+  flexGrow?: boolean;
+  /**
    * The direction of the content (only active if flex is set)
    */
   direction?: "horizontal" | "vertical";

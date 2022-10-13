@@ -3,7 +3,16 @@ import { CommonProps } from "./generic.types";
 /**
  * Font sizes
  */
-type FontSize = "8px" | "12px" | "16px" | "24px" | "32px" | "48px" | "64px";
+type FontSize =
+  | "8px"
+  | "12px"
+  | "14px"
+  | "16px"
+  | "20px"
+  | "24px"
+  | "32px"
+  | "48px"
+  | "64px";
 /**
  * Font styles
  */

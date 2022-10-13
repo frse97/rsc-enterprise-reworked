@@ -45,7 +45,7 @@ const App: React.FC = () => {
       <div className="rsc-app">
         <RscHeader activeRoute={activeRoute} setActiveRoute={setActiveRoute} />
         <RscMain />
-        <RscFooter />
+        {/* <RscFooter /> */}
       </div>
     </RscRouter>
   );

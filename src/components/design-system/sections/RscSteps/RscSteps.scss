@@ -1,7 +1,10 @@
+@import "../../../../styles/breakpoints.scss";
+
 // Steps Container
 .rsc-steps-container {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 64px 16px 0 16px;
 
   // Elements
   h1,
@@ -54,6 +57,48 @@
       flex-direction: row-reverse;
       > :first-child {
         margin-left: auto;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-lg-max) {
+  .rsc-steps-container {
+    padding: 32px;
+
+    .step.step-left {
+      flex-direction: column;
+      justify-content: center;
+
+      > :first-child {
+        margin-right: 0;
+        margin-bottom: 24px;
+      }
+    }
+    .step.step-right {
+      flex-direction: column;
+      justify-content: center;
+
+      > :first-child {
+        margin-left: 0;
+        margin-bottom: 24px;
+      }
+    }
+
+    .step {
+      .step-img {
+        min-width: 280px;
+        max-width: 280px;
+      }
+      .flowing-horizontal {
+        display: none;
+      }
+      .flowing-vertical {
+        &.v-left,
+        &.v-right {
+          left: unset;
+          right: unset;
+        }
       }
     }
   }

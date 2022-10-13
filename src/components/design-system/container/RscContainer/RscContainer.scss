@@ -8,6 +8,9 @@
   &.flex-v {
     flex-direction: column;
   }
+  &.flex-grow {
+    flex-grow: 1;
+  }
   &.is-aligned-center {
     align-items: center;
   }

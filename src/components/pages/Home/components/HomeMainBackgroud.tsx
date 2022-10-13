@@ -1,7 +1,7 @@
 import { memo } from "react";
 import { homeParticlesOptions } from "../../../data";
 import { RscButton, RscParticles, RscTitle } from "../../../design-system";
-import { rscRoutes } from "../../../shared";
+import { colors, rscRoutes } from "../../../shared";
 import { IHomeMainBackground } from "../Home.types";
 
 const HomeMainBackground: React.FC<IHomeMainBackground> = (props) => {
@@ -21,7 +21,7 @@ const HomeMainBackground: React.FC<IHomeMainBackground> = (props) => {
         <RscButton
           label="Discover our services"
           size="lg"
-          color="callToAction"
+          color={colors.light.callToAction}
           isFilled={false}
           href={rscRoutes.services.url}
         />

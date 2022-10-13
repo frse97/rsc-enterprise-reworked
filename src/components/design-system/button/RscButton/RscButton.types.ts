@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { RscColors, RscMargin, RscPadding } from "../../../shared";
+import { IRscColors, RscMargin, RscPadding } from "../../../shared";
 
 /**
  * The native button type
@@ -34,7 +34,7 @@ export interface IRscButton {
   /**
    * The primary color of the button
    */
-  color?: string | RscColors;
+  color?: string | IRscColors;
   /**
    * The size of the button
    * @default 'md'

@@ -1,77 +1,64 @@
+@import "../../../../styles/breakpoints.scss";
+
 .rsc-download-section {
-  height: 90vh;
-  margin-bottom: -440px;
   background-color: var(--primary-color6);
-
   color: var(--light-bg);
+  padding: 64px 24px;
 
-  .rsc-download-container {
-    height: 50%;
-    display: flex;
-    align-items: center;
+  .download-description {
+    padding: 0 32px 0 16px;
 
-    .descr {
-      height: 100%;
-      width: 30%;
-      padding: 0 64px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+    .download-title {
+      margin-bottom: 12px;
+    }
+  }
+  .download-actions {
+    .rsc-pdf-container {
+      width: 240px;
+      padding: 16px;
 
-      .download-title {
-        margin-bottom: 12px;
+      &:not(:last-child) {
+        margin-right: 24px;
+      }
+
+      // Pdf Icon
+      .rsc-pdf-icon {
+        width: 80px;
+        margin-bottom: 24px;
+
+        svg {
+          fill: var(--light-bg);
+        }
+      }
+
+      // Pdf Name
+      .rsc-pdf-name {
+        text-align: center;
+        height: 60px;
       }
     }
-    .download {
-      height: 100%;
-      width: 70%;
-      display: flex;
-      align-items: center;
+  }
+}
 
+@media screen and (max-width: $breakpoint-lg-max) {
+  .rsc-download-section {
+    flex-direction: column;
+
+    .download-description {
+      margin-bottom: 64px;
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-md-max) {
+  .rsc-download-section {
+    .download-actions {
+      flex-direction: column;
       .rsc-pdf-container {
-        max-width: 240px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
         &:not(:last-child) {
-          margin-right: 60px;
-        }
-
-        .rsc-pdf-form {
-          .rsc-pdf-icon {
-            width: 80px;
-            margin-bottom: 24px;
-
-            svg {
-              fill: var(--light-bg);
-            }
-          }
-        }
-        .rsc-pdf-action-container {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          font-size: 20px;
-
-          .rsc-pdf-name {
-            text-align: center;
-            height: 60px;
-          }
-
-          .rsc-actions {
-            margin-top: 12px;
-            margin-left: 24px;
-            font-size: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 40px;
-            min-width: 40px;
-            background-color: var(--primary-color6);
-            border-radius: 50%;
-            border: 2px solid var(--primary-color1);
-          }
+          margin-right: 0;
+          margin-bottom: 16px;
+          border-bottom: 1px solid var(--light-bg);
         }
       }
     }
