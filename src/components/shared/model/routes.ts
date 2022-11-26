@@ -9,7 +9,7 @@ export type RouteKey =
 /**
  * A single rsc route
  */
-interface IRscRoute {
+export interface IRscRoute {
   // The key of the route
   itemKey: RouteKey;
   // The url of the route
@@ -23,7 +23,7 @@ interface IRscRoute {
 /**
  * The rsc routes used in the homepage
  */
-interface IRscRoutes {
+export interface IRscRoutes {
   home: IRscRoute;
   services: IRscRoute;
   aboutUs: IRscRoute;

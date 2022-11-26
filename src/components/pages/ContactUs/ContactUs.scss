@@ -1,5 +1,35 @@
 .rsc-contact-us {
-  width: 100vw;
-  height: 100vh;
-  padding: 24px;
+  &-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 48px 0;
+
+    .rsc-title {
+      font-size: 48px;
+      margin-bottom: 16px;
+    }
+    .rsc-text {
+      font-size: 24px;
+    }
+  }
+
+  &-contacts {
+    display: flex;
+    flex-direction: column;
+
+    &-form,
+    &-social {
+      padding: 16px;
+    }
+
+    &-form {
+      background-color: #e5e5e5;
+    }
+    &-social {
+      height: 280px;
+      background-color: var(--primary-color6);
+      color: var(--light-bg);
+    }
+  }
 }

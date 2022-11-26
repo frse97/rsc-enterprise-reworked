@@ -7,6 +7,7 @@ export interface IRscColors {
     primaryColor5: string;
     primaryColor6: string;
     primaryColor7: string;
+    primaryColor8: string;
     callToAction: string;
     callToActionActive: string;
     callToActionHover: string;
@@ -21,6 +22,7 @@ export interface IRscColors {
     primaryColor5: string;
     primaryColor6: string;
     primaryColor7: string;
+    primaryColor8: string;
     callToAction: string;
     callToActionActive: string;
     callToActionHover: string;
@@ -42,6 +44,7 @@ export const colors: IRscColors = {
     primaryColor5: "#76899e",
     primaryColor6: "#06003c",
     primaryColor7: "#00dbce",
+    primaryColor8: "#6c5cff",
     callToAction: "#ff8c00",
     callToActionActive: "rgba(255, 140, 0, 0.9)",
     callToActionHover: "rgba(255, 140, 0, 0.4)",
@@ -57,6 +60,7 @@ export const colors: IRscColors = {
     primaryColor5: "#76899e",
     primaryColor6: "#06003c",
     primaryColor7: "#00dbce",
+    primaryColor8: "#6c5cff",
     callToAction: "#ff8c00",
     callToActionActive: "rgba(255, 140, 0, 0.9)",
     callToActionHover: "rgba(255, 140, 0, 0.4)",

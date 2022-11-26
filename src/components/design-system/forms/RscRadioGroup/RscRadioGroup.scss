@@ -1,0 +1,24 @@
+.rsc-radio-group {
+  margin-bottom: 16px;
+
+  label {
+    margin-bottom: 8px;
+  }
+
+  &.radio-group-horizontal {
+    display: flex;
+
+    .rsc-radio:not(:last-child) {
+      margin-right: 16px;
+    }
+  }
+
+  &.radio-group-vertical {
+    display: flex;
+    flex-direction: column;
+
+    .rsc-radio {
+      margin-bottom: 4px;
+    }
+  }
+}

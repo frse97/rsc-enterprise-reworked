@@ -1,79 +1,88 @@
-import {
-  faInstagram,
-  faLinkedin,
-  faMedium,
-  faTwitter,
-} from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { memo } from "react";
+import { CSSProperties, memo } from "react";
 import { Link } from "react-router-dom";
-import { RscLogo, RscText, RscTitle } from "../../design-system";
-import { rscRoutes } from "../../shared";
+import { RscContainer, RscLogo, RscText, RscTitle } from "../../design-system";
+import {
+  IRscRoute,
+  IRscRoutes,
+  ISocial,
+  rscRoutes,
+  rscSocials,
+} from "../../shared";
 import "./RscFooter.scss";
+import { IRscFooter } from "./RscFooter.types";
 
-const RscFooter: React.FC = () => {
+export const getSitemapEntries = (rscRoutes: IRscRoutes) => {
+  return (
+    <RscContainer type="div" className="sitemap-entries">
+      {Object.entries(rscRoutes).map((val: [string, IRscRoute]) => {
+        return (
+          <>
+            <div className="entry">
+              <Link to={val[1].url}>{val[1].name}</Link>
+            </div>
+          </>
+        );
+      })}
+    </RscContainer>
+  );
+};
+
+const getSocialConnection = (socials: ISocial[]) => {
   return (
     <>
-      <footer className="rsc-footer">
-        <div className="container">
-          <div className="content">
-            <div className="logo-container">
-              <RscLogo />
-            </div>
-            <div className="menu-container">
-              <div className="title">
-                <RscTitle level={2}>SITEMAP</RscTitle>
-              </div>
-              <div className="entries">
-                {/* TODO: Refactor with nav list */}
-                <div className="entry">
-                  <Link to={rscRoutes.aboutUs.url}>WHO WE ARE</Link>
-                </div>
-                <div className="entry">
-                  <Link to={rscRoutes.services.url}>SERVICES</Link>
-                </div>
-                <div className="entry">
-                  <Link to={rscRoutes.contactUs.url}>CONTACT</Link>
-                </div>
-              </div>
-            </div>
-            <div className="social-container">
-              <div className="title">
-                <RscTitle level={2}>SOCIAL NETWORK</RscTitle>
-              </div>
-              <div className="socials">
-                <div className="row">
-                  <a href={"https://www.linkedin.com/company/rscenterprises/"}>
-                    <FontAwesomeIcon icon={faLinkedin} />
-                  </a>
-                  <a href={"https://twitter.com/0xRSC"}>
-                    <FontAwesomeIcon icon={faTwitter} />
-                  </a>
-                  <a href={"https://www.linkedin.com/company/rscenterprises/"}>
-                    <FontAwesomeIcon icon={faMedium} />
-                  </a>
-                  <a href={"https://www.instagram.com/rsc.enterprises/"}>
-                    <FontAwesomeIcon icon={faInstagram} />
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="newsletter"></div>
-          </div>
-          <div className="bottom-container">
-            <RscText type="span">
-              Copyright © 2022, RSC Enterprises, All rights reserved
-            </RscText>
-            <div className="creator">
-              <RscText type="span">
-                Site made by Sebastian Fries, SF (
-                <a href={"https://linktr.ee/sebastianfries"}>Linktree</a>
-              </RscText>
-            </div>
-          </div>
-        </div>
-      </footer>
+      {socials.map((social) => {
+        return <a href={social.url}>{social.icon}</a>;
+      })}
     </>
+  );
+};
+
+const RscFooter: React.FC<IRscFooter> = (props) => {
+  const { backgroundColor } = props;
+
+  const mergedStyles: CSSProperties & { "--rsc-footer-bg-color"?: string } = {
+    "--rsc-footer-bg-color": backgroundColor as string,
+  };
+
+  return (
+    <footer className="rsc-footer" style={{ ...mergedStyles }}>
+      {/* FIXME: Refactor */}
+      <RscContainer type="div" className="rsc-footer-form">
+        {}
+      </RscContainer>
+      <RscContainer type="div" className="rsc-footer-container">
+        <RscContainer type="div" className="logo-menu">
+          <RscContainer type="div" className="logo-container">
+            <RscLogo />
+          </RscContainer>
+          <RscContainer type="div" className="menu-social">
+            <RscContainer type="div" className="menu-container">
+              <>
+                <RscTitle level={3}>SITEMAP</RscTitle>
+                {getSitemapEntries(rscRoutes)}
+              </>
+            </RscContainer>
+            <RscContainer type="div" className="social-container">
+              <>
+                <RscTitle level={3}>SOCIAL NETWORK</RscTitle>
+                {getSocialConnection(rscSocials)}
+              </>
+            </RscContainer>
+          </RscContainer>
+        </RscContainer>
+        <RscContainer type="div" className="copyright-container">
+          <RscText type="span">Copyright © 2022, All rights reserved</RscText>
+          <RscContainer type="div">
+            <RscText type="span">
+              {/* FIXME: */}
+              Made by Sebastian Fries {"("}
+              <Link to="https://linktr.ee/sebastianfries">Linktree</Link>
+              {")"}
+            </RscText>
+          </RscContainer>
+        </RscContainer>
+      </RscContainer>
+    </footer>
   );
 };
 

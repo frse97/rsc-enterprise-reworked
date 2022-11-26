@@ -7,6 +7,7 @@ import "./RscNavbar.scss";
 
 /**
  * A component to display a single navigation item
+ * FIXME: Arrow non available on Apple
  */
 const RscNavItem: React.FC<IRscNavItem> = (props) => {
   const {

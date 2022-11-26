@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as RscRouter, useLocation } from "react-router-dom";
 import { RscFooter, RscHeader, RscMain } from "./components";
-import { RouteKey, utils } from "./components/shared";
+import { colors, RouteKey, utils } from "./components/shared";
 
 // Import styles
 import "./styles/theme.scss";
@@ -45,7 +45,7 @@ const App: React.FC = () => {
       <div className="rsc-app">
         <RscHeader activeRoute={activeRoute} setActiveRoute={setActiveRoute} />
         <RscMain />
-        {/* <RscFooter /> */}
+        <RscFooter backgroundColor={colors.light.primaryColor6} />
       </div>
     </RscRouter>
   );

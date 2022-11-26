@@ -1,0 +1,7 @@
+.rsc-radio {
+  input {
+    &:focus {
+      outline-color: var(--call-to-action);
+    }
+  }
+}

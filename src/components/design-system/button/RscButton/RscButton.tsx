@@ -8,6 +8,7 @@ import { IRscButton } from "./RscButton.types";
 const RscButton: React.FC<IRscButton> = (props) => {
   const {
     className,
+    disabled,
     label,
     icon,
     color = "mainBlue",
@@ -61,16 +62,26 @@ const RscButton: React.FC<IRscButton> = (props) => {
     );
   }, [icon, label]);
 
-  return onClick ? (
-    <button className={classNames} type={nativeType} style={mergedStyles}>
-      {buttonContent}
-    </button>
-  ) : (
+  return href ? (
     <Link className="rsc-button-anchor" to={href || ""}>
-      <button className={classNames} type={nativeType} style={mergedStyles}>
+      <button
+        className={classNames}
+        disabled={disabled}
+        type={nativeType}
+        style={mergedStyles}
+      >
         {buttonContent}
       </button>
     </Link>
+  ) : (
+    <button
+      className={classNames}
+      disabled={disabled}
+      type={nativeType}
+      style={mergedStyles}
+    >
+      {buttonContent}
+    </button>
   );
 };
 

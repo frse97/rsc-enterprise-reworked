@@ -1,0 +1,20 @@
+.rsc-textarea {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+
+  label {
+    margin-bottom: 8px;
+  }
+
+  textarea {
+    height: 64px;
+    border: 0;
+    border-radius: 4px;
+    resize: none;
+
+    &:focus {
+      outline-color: var(--call-to-action);
+    }
+  }
+}

@@ -28,4 +28,13 @@ export interface IRscTitle extends CommonText {
    * The level of the title
    */
   level: TitleLevel;
+  /**
+   * Flags to remove margin
+   */
+  noMargin?:
+    | boolean
+    | {
+        top?: boolean;
+        bottom?: boolean;
+      };
 }

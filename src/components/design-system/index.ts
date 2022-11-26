@@ -1,5 +1,6 @@
 export * from "./button";
 export * from "./container";
+export * from "./forms";
 export * from "./generic";
 export * from "./image";
 export * from "./line";

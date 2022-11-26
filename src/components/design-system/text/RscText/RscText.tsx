@@ -12,6 +12,7 @@ export const RscTitle: React.FC<IRscTitle> = (props) => {
     fontStyle,
     fontWeight,
     textTransform,
+    noMargin,
     level,
     style,
   } = props;
@@ -23,6 +24,10 @@ export const RscTitle: React.FC<IRscTitle> = (props) => {
     fontStyle,
     fontWeight,
     textTransform,
+    margin: typeof noMargin === "boolean" ? 0 : undefined,
+    marginTop: typeof noMargin !== "boolean" && noMargin?.top ? 0 : undefined,
+    marginBottom:
+      typeof noMargin !== "boolean" && noMargin?.bottom ? 0 : undefined,
     ...style,
   };
 

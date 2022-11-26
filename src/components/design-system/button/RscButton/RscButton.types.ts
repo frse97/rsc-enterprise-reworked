@@ -66,4 +66,8 @@ export interface IRscButton {
    * The padding of the button
    */
   padding?: RscPadding;
+  /**
+   * Flag to identify if the button is disabled
+   */
+  disabled?: boolean;
 }

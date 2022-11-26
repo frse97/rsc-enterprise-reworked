@@ -20,6 +20,16 @@
       border: 2px solid var(--rsc-primary-btn-color);
       color: var(--rsc-primary-btn-color);
     }
+
+    &[disabled] {
+      background-color: #d3d3d3;
+      border: 2px solid #8a8a8a;
+      color: #8a8a8a;
+
+      &:hover {
+        cursor: auto;
+      }
+    }
   }
   &.is-not-filled {
     background-color: white;
@@ -30,6 +40,16 @@
       background-color: var(--rsc-primary-btn-color);
       border: 2px solid white;
       color: white;
+    }
+
+    &[disabled] {
+      background-color: #d3d3d3;
+      border: 2px solid #8a8a8a;
+      color: #8a8a8a;
+
+      &:hover {
+        cursor: auto;
+      }
     }
   }
 

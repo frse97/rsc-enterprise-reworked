@@ -1,0 +1,17 @@
+.rsc-range {
+  margin-bottom: 16px;
+
+  .rsc-range-component {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+
+    input {
+      flex-grow: 1;
+
+      &:focus {
+        outline-color: var(--call-to-action);
+      }
+    }
+  }
+}

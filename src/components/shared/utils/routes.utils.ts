@@ -11,8 +11,6 @@ export const routeToNavItems = () => {
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   for (const [key, value] of Object.entries(rscRoutes)) {
-    console.log("VALUE", value);
-
     const item: IRscNavItem = {
       itemKey: value.itemKey,
       name: value.name,
