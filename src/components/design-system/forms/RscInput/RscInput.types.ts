@@ -1,5 +1,9 @@
 export interface IRscInput {
   /**
+   * The aria property for invalidation
+   */
+  ariaInvalid?: boolean;
+  /**
    * A method to change the input
    */
   onChange: (...event: any[]) => void;
@@ -20,8 +24,4 @@ export interface IRscInput {
    * The name of the input
    */
   name?: string;
-  /**
-   * The ref to the input
-   */
-  ref: React.LegacyRef<HTMLInputElement>;
 }

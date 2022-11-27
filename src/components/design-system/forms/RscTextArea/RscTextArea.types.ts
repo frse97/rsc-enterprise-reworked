@@ -16,10 +16,6 @@ export interface IRscTextArea {
    */
   name?: string;
   /**
-   * The ref to the input
-   */
-  ref: React.LegacyRef<HTMLTextAreaElement>;
-  /**
    * The number of rows of the textarea
    */
   rows?: number;

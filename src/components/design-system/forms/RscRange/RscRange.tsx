@@ -1,13 +1,13 @@
 import { memo } from "react";
 import { IRscRange } from "./RscRange.types";
 import "./RscRange.scss";
+import React from "react";
 
-const RscRange: React.FC<IRscRange> = (props) => {
+const RscRange = React.forwardRef<HTMLInputElement, IRscRange>((props, ref) => {
   const {
     id,
     label,
     name,
-    ref,
     min,
     minLabel,
     maxLabel,
@@ -39,6 +39,6 @@ const RscRange: React.FC<IRscRange> = (props) => {
       </div>
     </div>
   );
-};
+});
 
 export default memo(RscRange);

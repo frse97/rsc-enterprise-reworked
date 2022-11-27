@@ -1,0 +1,18 @@
+.rsc-form-error {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #db3c30;
+  background-color: #fbebea;
+  border: 1px solid #db3c30;
+  border-radius: 4px;
+  padding: 4px;
+  margin-bottom: 4px;
+
+  .form-error-icon {
+    // TODO: Add color to theme
+    margin-right: 4px;
+    color: #db3c30;
+    font-size: 16px;
+  }
+}

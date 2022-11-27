@@ -15,8 +15,4 @@ export interface IRscCheckbox {
    * The name of the input
    */
   name?: string;
-  /**
-   * The ref to the input
-   */
-  ref: React.LegacyRef<HTMLInputElement>;
 }

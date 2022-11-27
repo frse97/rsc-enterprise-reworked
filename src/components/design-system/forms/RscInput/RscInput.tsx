@@ -1,14 +1,16 @@
 import { memo } from "react";
 import { IRscInput } from "./RscInput.types";
 import "./RscInput.scss";
+import React from "react";
 
-const RscInput: React.FC<IRscInput> = (props) => {
-  const { label, name, ref, type = "text", onChange, onBlur } = props;
+const RscInput = React.forwardRef<HTMLInputElement, IRscInput>((props, ref) => {
+  const { ariaInvalid, label, name, type = "text", onChange, onBlur } = props;
 
   return (
     <div className="rsc-input">
       {label && <label>{label}</label>}
       <input
+        aria-invalid={ariaInvalid}
         type={type}
         name={name}
         ref={ref}
@@ -17,6 +19,6 @@ const RscInput: React.FC<IRscInput> = (props) => {
       />
     </div>
   );
-};
+});
 
 export default memo(RscInput);

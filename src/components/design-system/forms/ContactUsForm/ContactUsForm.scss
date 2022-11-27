@@ -4,4 +4,10 @@
   padding: 48px;
   max-width: 800px;
   margin: 0 auto;
+
+  .submit-container {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+  }
 }

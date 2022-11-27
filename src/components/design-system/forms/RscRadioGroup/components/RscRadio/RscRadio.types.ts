@@ -23,8 +23,4 @@ export interface IRscRadio {
    * A method on blur
    */
   onBlur?: (...event: any[]) => void;
-  /**
-   * The ref to the input
-   */
-  ref?: React.LegacyRef<HTMLInputElement>;
 }

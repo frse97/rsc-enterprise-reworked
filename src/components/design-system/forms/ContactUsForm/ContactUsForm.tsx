@@ -2,65 +2,30 @@ import { memo, useCallback } from "react";
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
 import { colors } from "../../../shared";
 import { RscButton } from "../../button";
+import { FormErrorView } from "../FormErrorView";
 import { RscCheckbox } from "../RscCheckbox";
 import { RscInput } from "../RscInput";
-import { IRscRadio, RscRadioGroup } from "../RscRadioGroup";
+import { RscRadioGroup } from "../RscRadioGroup";
 import { RscRange } from "../RscRange";
 import { RscTextArea } from "../RscTextArea";
+import {
+  expectCollaborationOptions,
+  privateOrCompanyOptions,
+} from "./ContactUsForm.data";
 import "./ContactUsForm.scss";
-
-const privateOrCompanyOptions: Omit<IRscRadio, "name">[] = [
-  {
-    id: "private",
-    label: "Private",
-    value: "private",
-  },
-  {
-    id: "company",
-    label: "Company",
-    value: "company",
-  },
-];
-
-const expectCollaborationOptions: Omit<IRscRadio, "name">[] = [
-  {
-    id: "web3Adoption",
-    label: "Learn more about Web3Adoption",
-    value: "web3Adoption",
-  },
-  {
-    id: "enterpriseBlockchain",
-    label: "Integrate Enterprise Blockchain in my Corporation",
-    value: "enterpriseBlockchain",
-  },
-  {
-    id: "awareness",
-    label: "Blockchain awareness",
-    value: "awareness",
-  },
-];
-
-interface IContactUsFormData {
-  name: string;
-  email: string;
-  privateOrCompany: "private" | "company";
-  companyName?: string;
-  blockchainUnderstanding?: number;
-  expectCollaboration:
-    | "web3Adoption"
-    | "enterpriseBlockchain"
-    | "awareness"
-    | undefined;
-  projectOrSolution?: string;
-  privacyPolicy?: boolean;
-}
+import { IContactUsFormData } from "./ContactUsForm.types";
 
 const ContactUsForm: React.FC = () => {
-  const { control, handleSubmit, formState } = useForm<IContactUsFormData>({
+  const {
+    control,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm<IContactUsFormData>({
     defaultValues: {
       name: "",
       email: "",
-      privateOrCompany: "private",
+      privateOrCompany: undefined,
       companyName: "",
       blockchainUnderstanding: 0,
       expectCollaboration: undefined,
@@ -71,18 +36,21 @@ const ContactUsForm: React.FC = () => {
   });
 
   const onSubmit: SubmitHandler<IContactUsFormData> = useCallback((data) => {
-    console.log("SUBMIT");
-    console.log("FORM DATA", data);
+    alert(
+      `Name: ${data.name}, Email: ${data.email}, Type: ${data.privateOrCompany}, Blockchain understanding: ${data.blockchainUnderstanding}, Collaboration: ${data.expectCollaboration}, Idea: ${data.projectOrSolution}, PrivacyPolicy: ${data.privacyPolicy}`
+    );
   }, []);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="rsc-contact-form">
+      {errors.name && <FormErrorView message={errors.name.message} />}
       <Controller
         name="name"
         control={control}
-        rules={{ required: true }}
+        rules={{ required: { message: "Name is required", value: true } }}
         render={({ field: { onChange, onBlur, name, ref } }) => (
           <RscInput
+            ariaInvalid={errors.name ? true : false}
             label="Name (*)"
             name={name}
             onChange={onChange}
@@ -91,12 +59,21 @@ const ContactUsForm: React.FC = () => {
           />
         )}
       />
+      {errors.email && <FormErrorView message={errors.email.message} />}
       <Controller
         name="email"
         control={control}
-        rules={{ required: true }}
+        rules={{
+          required: { message: "Email is required", value: true },
+          pattern: {
+            message: "Please enter a valid email",
+            value:
+              /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+          },
+        }}
         render={({ field: { onChange, onBlur, name, ref } }) => (
           <RscInput
+            ariaInvalid={errors.email ? true : false}
             label="Email (*)"
             type="email"
             name={name}
@@ -106,10 +83,15 @@ const ContactUsForm: React.FC = () => {
           />
         )}
       />
+      {errors.privateOrCompany && (
+        <FormErrorView message={errors.privateOrCompany.message} />
+      )}
       <Controller
         name="privateOrCompany"
         control={control}
-        rules={{ required: true }}
+        rules={{
+          required: { message: "Please select an option below", value: true },
+        }}
         render={({ field: { onChange, onBlur, name, ref } }) => (
           <RscRadioGroup
             id="privateOrCompany"
@@ -122,19 +104,21 @@ const ContactUsForm: React.FC = () => {
           />
         )}
       />
-      <Controller
-        name="companyName"
-        control={control}
-        render={({ field: { onChange, onBlur, name, ref } }) => (
-          <RscInput
-            label="What's the name of the company/brand you represent? (optional)"
-            name={name}
-            onChange={onChange}
-            onBlur={onBlur}
-            ref={ref}
-          />
-        )}
-      />
+      {watch("privateOrCompany") === "company" && (
+        <Controller
+          name="companyName"
+          control={control}
+          render={({ field: { onChange, onBlur, name, ref } }) => (
+            <RscInput
+              label="What's the name of the company/brand you represent?"
+              name={name}
+              onChange={onChange}
+              onBlur={onBlur}
+              ref={ref}
+            />
+          )}
+        />
+      )}
       <Controller
         name="blockchainUnderstanding"
         control={control}
@@ -156,13 +140,16 @@ const ContactUsForm: React.FC = () => {
           />
         )}
       />
-      {/* 
-        - Add option "other" and display input 
-      */}
+
+      {errors.expectCollaboration && (
+        <FormErrorView message={errors.expectCollaboration.message} />
+      )}
       <Controller
         name="expectCollaboration"
         control={control}
-        rules={{ required: true }}
+        rules={{
+          required: { message: "Please select an option below", value: true },
+        }}
         render={({ field: { onChange, onBlur, name, ref } }) => (
           <RscRadioGroup
             id="expectCollaboration"
@@ -175,26 +162,43 @@ const ContactUsForm: React.FC = () => {
           />
         )}
       />
-      <Controller
-        name="projectOrSolution"
-        control={control}
-        render={({ field: { onChange, onBlur, name, ref } }) => (
-          <RscTextArea
-            label="Do you already have a project/solution in mind that you would like to discuss with us?"
-            name={name}
-            onChange={onChange}
-            onBlur={onBlur}
-            ref={ref}
-          />
-        )}
-      />
+      {watch("expectCollaboration") === "other" && errors.projectOrSolution && (
+        <FormErrorView message={errors.projectOrSolution.message} />
+      )}
+      {watch("expectCollaboration") === "other" && (
+        <Controller
+          name="projectOrSolution"
+          control={control}
+          rules={{
+            required: { message: "Please add a description", value: true },
+          }}
+          render={({ field: { onChange, onBlur, name, ref } }) => (
+            <RscTextArea
+              label="What other collaboration idea do you have? Please describe the project/solution that you would like to discuss with us here"
+              name={name}
+              onChange={onChange}
+              onBlur={onBlur}
+              ref={ref}
+            />
+          )}
+        />
+      )}
+      {errors.privacyPolicy && (
+        <FormErrorView message={errors.privacyPolicy.message} />
+      )}
       <Controller
         name="privacyPolicy"
         control={control}
-        rules={{ required: true }}
+        rules={{
+          required: {
+            message:
+              "It is necessary that you accept the treatment of your data to confirm the form",
+            value: true,
+          },
+        }}
         render={({ field: { onChange, onBlur, name, ref } }) => (
           <RscCheckbox
-            label="I acconsent to the treatment of my personal data and confirm that i rode the privacy policy"
+            label="I acconsent to the treatment of my personal data and confirm that i read the privacy policy"
             name={name}
             onChange={onChange}
             onBlur={onBlur}
@@ -202,12 +206,13 @@ const ContactUsForm: React.FC = () => {
           />
         )}
       />
-      <RscButton
-        color={colors.light.callToAction}
-        label="Submit"
-        nativeType="submit"
-        disabled={!formState.isValid}
-      />
+      <div className="submit-container">
+        <RscButton
+          color={colors.light.callToAction}
+          label="Submit"
+          nativeType="submit"
+        />
+      </div>
     </form>
   );
 };

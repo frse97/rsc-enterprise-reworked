@@ -17,7 +17,7 @@ export const getSitemapEntries = (rscRoutes: IRscRoutes) => {
       {Object.entries(rscRoutes).map((val: [string, IRscRoute]) => {
         return (
           <>
-            <div className="entry">
+            <div className="entry" key={val[1].name}>
               <Link to={val[1].url}>{val[1].name}</Link>
             </div>
           </>
@@ -30,8 +30,12 @@ export const getSitemapEntries = (rscRoutes: IRscRoutes) => {
 const getSocialConnection = (socials: ISocial[]) => {
   return (
     <>
-      {socials.map((social) => {
-        return <a href={social.url}>{social.icon}</a>;
+      {socials.map((social, i) => {
+        return (
+          <a key={i} href={social.url}>
+            {social.icon}
+          </a>
+        );
       })}
     </>
   );

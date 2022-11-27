@@ -26,10 +26,6 @@ export interface IRscRadioGroup {
    */
   onBlur: (...event: any[]) => void;
   /**
-   * The ref to the input
-   */
-  ref: React.LegacyRef<HTMLInputElement>;
-  /**
    * The radio orientation
    * @default 'vertical'
    */
