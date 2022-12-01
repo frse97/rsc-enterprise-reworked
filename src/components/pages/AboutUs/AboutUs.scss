@@ -1,5 +1,146 @@
 .rsc-about-us {
-  width: 100vw;
-  height: 100vh;
-  padding: 24px;
+  &-goldencircle {
+    width: 100vw;
+    height: calc(100vh - 120px);
+
+    &-form {
+      height: 100%;
+      background-color: var(--primary-color6);
+
+      .circle-container {
+        height: 100%;
+        position: relative;
+
+        .what,
+        .how,
+        .why {
+          border-radius: 100%;
+          color: var(--light-bg);
+          text-align: center;
+          transition: all ease-in-out 0.4s;
+
+          &.is-clicked {
+            height: 100%;
+            width: 100vw;
+            border-radius: 0;
+            position: relative;
+            top: 0;
+            left: 0;
+            display: block;
+            padding: 24px 48px;
+            background-color: var(--light-bg);
+            color: var(--dark-bg);
+
+            .title {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+
+              .text {
+                font-size: 64px;
+
+                .icon {
+                  display: none;
+                }
+              }
+
+              .close {
+                width: 40px;
+                height: 40px;
+                color: var(--call-to-action);
+                position: absolute;
+                right: 64px;
+                font-size: 48px;
+                height: auto;
+                opacity: 1;
+
+                &:hover {
+                  cursor: pointer;
+                }
+              }
+            }
+
+            &:hover {
+              box-shadow: none;
+              cursor: auto;
+            }
+          }
+
+          .title {
+            font-weight: bold;
+            font-size: 32px;
+
+            .close {
+              opacity: 0;
+              height: 0;
+            }
+          }
+
+          &:hover {
+            cursor: pointer;
+            box-shadow: 1px -1px 16px 16px rgba(255, 255, 255, 0.5);
+          }
+        }
+
+        .how {
+          &.what-clicked {
+            display: none;
+          }
+        }
+        .why {
+          &.how-clicked,
+          &.what-clicked {
+            display: none;
+          }
+        }
+
+        .what {
+          position: absolute;
+          top: calc(50% - (900px / 2));
+          left: calc(50% - (900px / 2));
+          width: 900px;
+          height: 900px;
+          background-color: #ffba66;
+          padding: 50px;
+        }
+
+        .how {
+          position: absolute;
+          top: calc(50% - (600px / 2));
+          left: calc(50% - (600px / 2));
+          width: 600px;
+          height: 600px;
+          border-radius: 100%;
+          background-color: #ffa332;
+          padding: 50px;
+        }
+
+        .why {
+          position: absolute;
+          top: calc(50% - (300px / 2));
+          left: calc(50% - (300px / 2));
+          width: 300px;
+          height: 300px;
+          border-radius: 100%;
+          background-color: #ff8c00;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+
+          .container {
+            * {
+              height: 0;
+              opacity: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+  &-offset {
+    width: 100%;
+    height: 80px;
+    background-color: var(--primary-color6);
+  }
 }

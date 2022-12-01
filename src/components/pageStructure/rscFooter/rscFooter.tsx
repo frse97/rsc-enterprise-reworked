@@ -1,45 +1,9 @@
 import { CSSProperties, memo } from "react";
 import { Link } from "react-router-dom";
 import { RscContainer, RscLogo, RscText, RscTitle } from "../../design-system";
-import {
-  IRscRoute,
-  IRscRoutes,
-  ISocial,
-  rscRoutes,
-  rscSocials,
-} from "../../shared";
+import { rscRoutes, rscSocials, utils } from "../../shared";
 import "./RscFooter.scss";
 import { IRscFooter } from "./RscFooter.types";
-
-export const getSitemapEntries = (rscRoutes: IRscRoutes) => {
-  return (
-    <RscContainer type="div" className="sitemap-entries">
-      {Object.entries(rscRoutes).map((val: [string, IRscRoute]) => {
-        return (
-          <>
-            <div className="entry" key={val[1].name}>
-              <Link to={val[1].url}>{val[1].name}</Link>
-            </div>
-          </>
-        );
-      })}
-    </RscContainer>
-  );
-};
-
-const getSocialConnection = (socials: ISocial[]) => {
-  return (
-    <>
-      {socials.map((social, i) => {
-        return (
-          <a key={i} href={social.url}>
-            {social.icon}
-          </a>
-        );
-      })}
-    </>
-  );
-};
 
 const RscFooter: React.FC<IRscFooter> = (props) => {
   const { backgroundColor } = props;
@@ -63,13 +27,13 @@ const RscFooter: React.FC<IRscFooter> = (props) => {
             <RscContainer type="div" className="menu-container">
               <>
                 <RscTitle level={3}>SITEMAP</RscTitle>
-                {getSitemapEntries(rscRoutes)}
+                {utils.data.getSitemapEntries(rscRoutes)}
               </>
             </RscContainer>
             <RscContainer type="div" className="social-container">
               <>
                 <RscTitle level={3}>SOCIAL NETWORK</RscTitle>
-                {getSocialConnection(rscSocials)}
+                {utils.data.getSocialConnection(rscSocials)}
               </>
             </RscContainer>
           </RscContainer>

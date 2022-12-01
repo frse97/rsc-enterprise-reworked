@@ -5,6 +5,17 @@
   max-width: 800px;
   margin: 0 auto;
 
+  .nameEmail {
+    display: flex;
+    .field {
+      width: 45%;
+
+      &:first-child {
+        margin-right: 10%;
+      }
+    }
+  }
+
   .submit-container {
     display: flex;
     flex-grow: 1;

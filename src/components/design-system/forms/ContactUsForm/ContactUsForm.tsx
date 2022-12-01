@@ -43,46 +43,58 @@ const ContactUsForm: React.FC = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="rsc-contact-form">
-      {errors.name && <FormErrorView message={errors.name.message} />}
-      <Controller
-        name="name"
-        control={control}
-        rules={{ required: { message: "Name is required", value: true } }}
-        render={({ field: { onChange, onBlur, name, ref } }) => (
-          <RscInput
-            ariaInvalid={errors.name ? true : false}
-            label="Name (*)"
-            name={name}
-            onChange={onChange}
-            onBlur={onBlur}
-            ref={ref}
+      <div className="nameEmail">
+        <div className="field">
+          {errors.name && <FormErrorView message={errors.name.message} />}
+          <Controller
+            name="name"
+            control={control}
+            rules={{ required: { message: "Name is required", value: true } }}
+            render={({ field: { onChange, onBlur, name, ref } }) => (
+              <RscInput
+                ariaInvalid={errors.name ? true : false}
+                label="Name (*)"
+                name={name}
+                onChange={onChange}
+                onBlur={onBlur}
+                ref={ref}
+                style={{
+                  marginTop: !errors.name && errors.email ? "32px" : "0px",
+                }}
+              />
+            )}
           />
-        )}
-      />
-      {errors.email && <FormErrorView message={errors.email.message} />}
-      <Controller
-        name="email"
-        control={control}
-        rules={{
-          required: { message: "Email is required", value: true },
-          pattern: {
-            message: "Please enter a valid email",
-            value:
-              /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-          },
-        }}
-        render={({ field: { onChange, onBlur, name, ref } }) => (
-          <RscInput
-            ariaInvalid={errors.email ? true : false}
-            label="Email (*)"
-            type="email"
-            name={name}
-            onChange={onChange}
-            onBlur={onBlur}
-            ref={ref}
+        </div>
+        <div className="field">
+          {errors.email && <FormErrorView message={errors.email.message} />}
+          <Controller
+            name="email"
+            control={control}
+            rules={{
+              required: { message: "Email is required", value: true },
+              pattern: {
+                message: "Please enter a valid email",
+                value:
+                  /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+              },
+            }}
+            render={({ field: { onChange, onBlur, name, ref } }) => (
+              <RscInput
+                ariaInvalid={errors.email ? true : false}
+                label="Email (*)"
+                type="email"
+                name={name}
+                onChange={onChange}
+                onBlur={onBlur}
+                ref={ref}
+                style={{
+                  marginTop: !errors.email && errors.name ? "32px" : "0px",
+                }}
+              />
+            )}
           />
-        )}
-      />
+        </div>
+      </div>
       {errors.privateOrCompany && (
         <FormErrorView message={errors.privateOrCompany.message} />
       )}

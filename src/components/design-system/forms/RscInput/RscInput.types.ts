@@ -1,3 +1,5 @@
+import { CSSProperties } from "react";
+
 export interface IRscInput {
   /**
    * The aria property for invalidation
@@ -24,4 +26,8 @@ export interface IRscInput {
    * The name of the input
    */
   name?: string;
+  /**
+   * Additional styles
+   */
+  style?: CSSProperties;
 }

@@ -5,6 +5,7 @@ import {
   RscText,
   RscTitle,
 } from "../../design-system";
+import { rscSocials, utils } from "../../shared";
 import "./ContactUs.scss";
 
 /**
@@ -23,7 +24,14 @@ const ContactUs: React.FC = () => {
         <div className="rsc-contact-us-contacts-form">
           <ContactUsForm />
         </div>
-        <div className="rsc-contact-us-contacts-social">Social</div>
+        <div className="rsc-contact-us-contacts-social">
+          <RscTitle level={1} noMargin>
+            Find us on social media
+          </RscTitle>
+          <div className="social">
+            {utils.data.getSocialConnection(rscSocials)}
+          </div>
+        </div>
       </div>
     </RscContainer>
   );
